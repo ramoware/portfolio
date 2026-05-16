@@ -448,6 +448,47 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* ── Cert Carousel (drag / swipe, no buttons) ── */
+    .cert-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;          /* Firefox */
+      cursor: grab;
+      padding-bottom: 4px;            /* prevent clipping box-shadow */
+    }
+    .cert-carousel::-webkit-scrollbar { display: none; }
+    .cert-carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
+
+    .cert-slide {
+      flex: 0 0 calc((100% - 3rem) / 3);
+      scroll-snap-align: start;
+      min-width: 220px;
+    }
+    @media (max-width: 900px) {
+      .cert-slide { flex: 0 0 calc((100% - 1.5rem) / 2); }
+    }
+    @media (max-width: 560px) {
+      .cert-slide { flex: 0 0 90%; }
+    }
+
+    .cert-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.75rem;
+    }
+    .cert-dot {
+      width: 7px; height: 7px;
+      background: rgba(27,66,53,0.25);
+      transform: rotate(45deg);
+      transition: background 0.25s;
+      cursor: pointer;
+    }
+    .cert-dot.active { background: var(--gold); }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
       .hero-name { font-size: 2.8rem; }
@@ -548,7 +589,7 @@
         <div class="space-y-4 fade-in">
           <div class="info-card">
             <p class="info-card-label">Education</p>
-            <p>Ramanand Arya D A V College</p>
+            <p>BSc IT · Ramanand Arya D A V College</p>
           </div>
           <div class="info-card">
             <p class="info-card-label">Experience</p>
@@ -693,9 +734,10 @@
         <p style="color:var(--ink-muted); font-style:italic; font-size:0.9rem;">Professional certifications that validate my expertise</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 fade-in">
+      <!-- Drag / swipe carousel — no buttons -->
+      <div class="cert-carousel fade-in" id="cert-track">
 
-        <div class="cert-badge p-10 text-center">
+        <div class="cert-badge cert-slide p-10 text-center">
           <div style="font-size:1.5rem; opacity:0.5; margin-bottom:1.25rem;">◈</div>
           <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem;">Certificate</p>
           <h3 class="mb-2">Research Analyst</h3>
@@ -703,7 +745,7 @@
           <div class="cert-chip inline-block">Financial Analysis · Markets</div>
         </div>
 
-        <div class="cert-badge p-10 text-center">
+        <div class="cert-badge cert-slide p-10 text-center">
           <div style="font-size:1.5rem; opacity:0.5; margin-bottom:1.25rem;">⬡</div>
           <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem;">Certificate</p>
           <h3 class="mb-2">Machine Learning Engineer</h3>
@@ -711,7 +753,7 @@
           <div class="cert-chip inline-block">Statistical Learning · Evaluation</div>
         </div>
 
-        <div class="cert-badge p-10 text-center">
+        <div class="cert-badge cert-slide p-10 text-center">
           <div style="font-size:1.5rem; opacity:0.5; margin-bottom:1.25rem;">◉</div>
           <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem;">Certificate</p>
           <h3 class="mb-2">Ethical Hacking</h3>
@@ -719,7 +761,26 @@
           <div class="cert-chip inline-block">Penetration Testing · VA</div>
         </div>
 
+        <div class="cert-badge cert-slide p-10 text-center">
+          <div style="font-size:1.5rem; opacity:0.5; margin-bottom:1.25rem;">◇</div>
+          <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem;">Certificate</p>
+          <h3 class="mb-2">Deep Learning for NLP</h3>
+          <p class="mb-5">NPTEL · IIT Kharagpur</p>
+          <div class="cert-chip inline-block">Deep Learning · NLP</div>
+        </div>
+
+        <div class="cert-badge cert-slide p-10 text-center">
+          <div style="font-size:1.5rem; opacity:0.5; margin-bottom:1.25rem;">△</div>
+          <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem;">Certificate</p>
+          <h3 class="mb-2">Business Fundamentals for Entrepreneurs</h3>
+          <p class="mb-5">NPTEL · IIT Bombay</p>
+          <div class="cert-chip inline-block">Entrepreneurship · Strategy</div>
+        </div>
+
       </div>
+
+      <!-- Scroll-position dots -->
+      <div class="cert-dots" id="cert-dots"></div>
     </div>
   </section>
 
@@ -743,7 +804,7 @@
               <div class="contact-icon-ring">✉</div>
               <div>
                 <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,235,215,0.45);margin-bottom:0.2rem;">Email</p>
-                <a href="mailto:ramdevsybscit@gmail.com" class="contact-link" style="font-size:0.9rem;">ramdevsybscit@gmail.com</a>
+                <a href="mailto:ramoware@gmail.com" class="contact-link" style="font-size:0.9rem;">ramoware@gmail.com</a>
               </div>
             </div>
             <div class="flex items-center gap-5">
@@ -765,7 +826,8 @@
 
         <div class="fade-in" style="border:1px solid rgba(250,235,215,0.12); padding:2.5rem;">
           <h3 style="font-size:1.1rem; font-weight:700; color:var(--cream); margin-bottom:1.5rem; letter-spacing:0.04em;">Send a Message</h3>
-          <form id="contact-form" class="space-y-4">
+          <!-- Replace YOUR_FORM_ID below with your Formspree form ID (from formspree.io/dashboard) -->
+          <form id="contact-form" action="https://formspree.io/f/xqenrvnb" class="space-y-4">
             <input  type="text"  name="name"    placeholder="Your Name"  required class="form-input">
             <input  type="email" name="email"   placeholder="Your Email" required class="form-input">
             <input  type="text"  name="subject" placeholder="Subject"    required class="form-input">
@@ -791,7 +853,7 @@
       </p>
 
       <div class="flex justify-center gap-8 mb-8">
-        <a href="mailto:ramdevsybscit@gmail.com" style="color:rgba(250,235,215,0.35); transition:color 0.2s; font-size:1.2rem;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(250,235,215,0.35)'">✉</a>
+        <a href="mailto:ramoware@gmail.com" style="color:rgba(250,235,215,0.35); transition:color 0.2s; font-size:1.2rem;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(250,235,215,0.35)'">✉</a>
         <a href="https://www.linkedin.com/in/ramdevchaudhary" target="_blank" style="color:rgba(250,235,215,0.35); transition:color 0.2s; font-size:1.2rem;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(250,235,215,0.35)'">⬡</a>
         <a href="https://github.com/ramoware" target="_blank" style="color:rgba(250,235,215,0.35); transition:color 0.2s; font-size:1.2rem;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(250,235,215,0.35)'">◈</a>
       </div>
@@ -856,51 +918,96 @@
       });
     }, 100);
 
-    // Contact form
-    function showMsg(div, msg, type) {
-      if (!div) return;
-      div.textContent = msg;
-      div.classList.remove('hidden');
-      div.style.color = type === 'success' ? 'var(--gold-light)' : '#e07070';
-    }
-
+    // Contact form — Formspree (emails you on every submission)
     document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      const txt = document.getElementById('submit-text');
+      const btn  = document.getElementById('submit-btn');
+      const txt  = document.getElementById('submit-text');
       const spin = document.getElementById('submit-spinner');
-      const msg = document.getElementById('form-message');
+      const msg  = document.getElementById('form-message');
 
       txt.textContent = 'Sending…';
       spin.classList.remove('hidden');
       btn.disabled = true;
       msg.classList.add('hidden');
 
-      const data = Object.fromEntries(new FormData(this).entries());
-      data.timestamp = new Date().toISOString();
-
       try {
-        const ctrl = new AbortController();
-        const tid = setTimeout(() => ctrl.abort(), 10000);
-        await fetch('https://script.google.com/macros/s/AKfycbyzOvMpTZkHNyvk05qqA2gNqfWeTm_gM-jTywIol4e3jIbXWEnxAEudsf1IszQ8uD4l/exec', {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-          signal: ctrl.signal
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
         });
-        clearTimeout(tid);
-        showMsg(msg, 'Thank you — your message has been sent. I\'ll be in touch soon.', 'success');
-        this.reset();
+        if (res.ok) {
+          msg.textContent = 'Thank you — your message has been sent. I\'ll be in touch soon.';
+          msg.style.color = 'var(--gold-light)';
+          msg.classList.remove('hidden');
+          this.reset();
+        } else {
+          const data = await res.json();
+          throw new Error(data?.errors?.map(e => e.message).join(', ') || 'Submission failed');
+        }
       } catch(err) {
-        let m = 'Something went wrong. Please email me directly at ramdevsybscit@gmail.com';
-        if (err.name === 'AbortError') m = 'Request timed out. Please check your connection.';
-        showMsg(msg, m, 'error');
+        msg.textContent = err.message.includes('fetch')
+          ? 'Network error. Please email me at ramdevsybscit@gmail.com'
+          : (err.message || 'Something went wrong. Please email me at ramoware@gmail.com');
+        msg.style.color = '#e07070';
+        msg.classList.remove('hidden');
       } finally {
         txt.textContent = 'Send Message';
         spin.classList.add('hidden');
         btn.disabled = false;
       }
     });
+    // ── Certification Carousel (drag to scroll, dots sync) ──
+    (function() {
+      const track  = document.getElementById('cert-track');
+      const dotsEl = document.getElementById('cert-dots');
+      if (!track) return;
+
+      const slides = Array.from(track.querySelectorAll('.cert-slide'));
+      const total  = slides.length;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'cert-dot' + (i === 0 ? ' active' : '');
+        d.onclick = () => {
+          track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+        };
+        dotsEl.appendChild(d);
+      });
+
+      function updateDots() {
+        const scrollLeft = track.scrollLeft;
+        let closest = 0, minDist = Infinity;
+        slides.forEach((s, i) => {
+          const dist = Math.abs(s.offsetLeft - scrollLeft);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        dotsEl.querySelectorAll('.cert-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === closest);
+        });
+      }
+
+      track.addEventListener('scroll', updateDots, { passive: true });
+
+      // Mouse drag
+      let isDragging = false, startX = 0, startScroll = 0;
+      track.addEventListener('mousedown', e => {
+        isDragging = true;
+        startX = e.pageX;
+        startScroll = track.scrollLeft;
+        track.classList.add('dragging');
+      });
+      document.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        track.scrollLeft = startScroll - (e.pageX - startX);
+      });
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        track.classList.remove('dragging');
+      });
+    })();
   </script>
 </body>
 </html>
