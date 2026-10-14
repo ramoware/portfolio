@@ -3,261 +3,181 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ramdev Chaudhary — ML Engineer · 静かな庭</title>
-<meta name="description" content="Ramdev Chaudhary — Machine Learning Engineer. ML systems, RF sensing, security protocols and quantitative models."/>
+<title>Ramdev Chaudhary — ML Engineer</title>
+<meta name="description" content="Ramdev Chaudhary — ML engineer building ML systems, RF sensing, security protocols and quant models."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--washi:#f6f1e7;--washi2:#ede5d3;--sumi:#23262d;--sumi2:#5b5e66;--shu:#c8452d;--matcha:#7d9170;--ai:#3a5675;--sakura:#f2c9cf;--line:rgba(35,38,45,.14);
---serif:'Shippori Mincho',Georgia,serif;--sans:'Zen Maru Gothic',system-ui,sans-serif;--mono:ui-monospace,Menlo,monospace}
+:root{--paper:#f3e8cf;--paper2:#ead9b4;--ink:#2b2a33;--soft:#55525c;--blue:#2f5389;--sky:#6f93b8;--red:#c4472f;--green:#7b9066;--ochre:#e0a83c;
+--head:'Kaisei Decol',Georgia,serif;--body:'M PLUS Rounded 1c',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--washi);color:var(--sumi);line-height:1.8;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--shu);color:#fff}
-.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
-section{padding:6.5rem 0;position:relative}
+body{font-family:var(--body);font-size:1.06rem;line-height:1.7;background:var(--paper);color:var(--ink);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:60;pointer-events:none;box-shadow:inset 0 0 0 8px var(--paper),inset 0 0 0 10px var(--ink),inset 0 0 0 13px var(--paper),inset 0 0 0 14px var(--ink)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.09;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.04 .9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}::selection{background:var(--red);color:#fff}
+.wrap{max-width:1060px;margin:0 auto;padding:0 2rem;position:relative;z-index:2}
+section{padding:6rem 0;position:relative}
+#bl{position:fixed;inset:0;z-index:55;pointer-events:none}
 /* nav */
-nav{position:fixed;top:0;width:100%;z-index:40;background:rgba(246,241,231,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1080px;margin:0 auto;padding:.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.logo{font-family:var(--serif);font-weight:700;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
-.hanko{width:30px;height:30px;background:var(--shu);color:#fff;border-radius:6px;display:grid;place-items:center;font-size:.95rem;transform:rotate(-6deg)}
-.links{display:flex;gap:1.4rem;font-size:.85rem;overflow-x:auto;scrollbar-width:none}
-.links a{white-space:nowrap;color:var(--sumi2);transition:color .2s}.links a:hover{color:var(--shu)}
-.links small{display:block;font-family:var(--serif);font-size:.65rem;color:var(--shu);line-height:1;text-align:center}
-/* one-take thread */
-#thread{position:fixed;left:14px;top:70px;bottom:20px;width:2px;background:var(--line);z-index:30}
-#thread i{position:absolute;left:0;top:0;width:100%;height:0;background:var(--shu)}
-#koi{position:absolute;left:-9px;top:0;font-size:1.2rem;transform:rotate(90deg);transition:top .1s linear}
-@media(max-width:700px){#thread{display:none}}
+nav{position:fixed;top:14px;left:14px;right:14px;z-index:50;background:rgba(243,232,207,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(43,42,51,.2)}
+.nav-in{max-width:1060px;margin:0 auto;padding:.6rem 1.2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.logo{font-family:var(--head);font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.seal{width:28px;height:28px;background:var(--red);border-radius:4px;display:grid;place-items:center;flex:none}
+.links{display:flex;gap:1.5rem;font-weight:700;font-size:.95rem;overflow-x:auto;scrollbar-width:none}
+.links a{white-space:nowrap;transition:color .2s}.links a:hover{color:var(--red)}
+#thread{position:fixed;left:30px;top:90px;bottom:34px;width:2px;background:rgba(43,42,51,.15);z-index:30}
+#thread i{position:absolute;left:0;top:0;width:100%;background:var(--red)}
+#thread b{position:absolute;left:-6px;width:14px;height:14px;border-radius:50%;background:var(--red);top:0}
+@media(max-width:900px){#thread{display:none}}
 /* hero */
-#home{min-height:100vh;display:flex;align-items:center;padding:7rem 0 5rem;overflow:hidden;background:linear-gradient(#f9efe3,var(--washi) 70%)}
-.scene{position:absolute;inset:0;pointer-events:none}
-.sun{position:absolute;right:12%;top:16%;width:min(24vw,210px);aspect-ratio:1;border-radius:50%;background:var(--shu);opacity:.9;animation:rise 3s ease-out both,breathe 7s ease-in-out 3s infinite}
-@keyframes rise{from{transform:translateY(90px);opacity:0}}@keyframes breathe{50%{transform:scale(1.04)}}
-.hills{position:absolute;bottom:0;left:0;width:100%;height:48%}
-.koi{position:absolute;font-size:2rem;bottom:16%;left:-10%;animation:swim 26s linear infinite;opacity:.85}
-.koi.b{bottom:8%;animation-duration:34s;animation-delay:-14s;font-size:1.5rem}
-@keyframes swim{50%{transform:translateY(-18px) scaleY(.92)}to{left:110%}}
-.petal{position:absolute;top:-30px;width:11px;height:14px;background:var(--sakura);border-radius:80% 0 80% 0;opacity:.9;animation:fall linear infinite}
-@keyframes fall{to{transform:translate(90px,105vh) rotate(540deg)}}
-.hero-in{position:relative;z-index:2}
-.rec{display:inline-flex;gap:.6rem;align-items:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;border:1px solid var(--line);border-radius:99px;padding:.3rem .9rem;background:rgba(255,255,255,.5)}
-.rec i{width:8px;height:8px;border-radius:50%;background:var(--shu);animation:blink 1.4s infinite}@keyframes blink{50%{opacity:.2}}
-h1{font-family:var(--serif);font-size:clamp(2.8rem,9vw,6.4rem);line-height:1.1;margin:1.2rem 0 .6rem;font-weight:700}
-h1 em{font-style:normal;color:var(--shu)}
-.cap{min-height:3.2rem;font-size:clamp(1.15rem,3vw,1.7rem);font-weight:700}
-.cap span{display:inline-block;margin-right:.3em;opacity:.35;transition:.25s}
-.cap span.on{opacity:1;color:#fff;background:var(--ai);border-radius:8px;padding:0 .35em;transform:scale(1.07) rotate(-1.5deg)}
-.hero-p{max-width:38rem;color:var(--sumi2);margin:1rem 0 2rem}
-.btn{display:inline-block;padding:.8rem 1.6rem;border-radius:99px;font-weight:700;font-size:.9rem;border:2px solid var(--sumi);margin:0 .6rem .6rem 0;transition:transform .2s,background .2s,color .2s}
-.btn:hover{transform:translateY(-3px) rotate(-1deg)}
-.btn.fill{background:var(--shu);border-color:var(--shu);color:#fff}
-.btn.fill:hover{background:var(--sumi);border-color:var(--sumi)}
-/* headings */
-.sh{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem;flex-wrap:wrap}
-.take{font-family:var(--mono);font-size:.7rem;color:var(--shu);letter-spacing:.1em;border:1px solid var(--shu);padding:.1rem .5rem;border-radius:4px}
-.sh h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);line-height:1.15}
-.sh h2 em{font-style:normal;color:var(--shu)}
-.sh .kj{font-family:var(--serif);font-size:3.5rem;color:var(--sakura);line-height:1;margin-left:auto;-webkit-text-stroke:1px var(--shu)}
-/* wave marquee */
-.wave{background:var(--ai);color:var(--washi);padding:.9rem 0;overflow:hidden;font-family:var(--serif)}
-.wave div{display:flex;gap:3rem;width:max-content;animation:mq 40s linear infinite;white-space:nowrap}
-@keyframes mq{to{transform:translateX(-50%)}}
-/* collage */
-.collage{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:4rem}
-.tile{background:#fff;padding:.7rem .7rem 1.2rem;box-shadow:0 8px 22px rgba(35,38,45,.12);position:relative;transition:transform .35s}
-.tile:nth-child(1){transform:rotate(-3deg)}.tile:nth-child(2){transform:rotate(2deg) translateY(14px)}.tile:nth-child(3){transform:rotate(-1.5deg)}.tile:nth-child(4){transform:rotate(3deg) translateY(10px)}
-.tile:hover{transform:rotate(0) scale(1.05)!important;z-index:2}
-.tile::before{content:'';position:absolute;top:-10px;left:50%;width:64px;height:20px;margin-left:-32px;background:rgba(200,69,45,.28);transform:rotate(-3deg)}
-.art{aspect-ratio:1;border-radius:4px;display:grid;place-items:center;font-size:3.2rem;overflow:hidden;animation:bob 5s ease-in-out infinite}
-.tile:nth-child(2) .art{animation-delay:-1s}.tile:nth-child(3) .art{animation-delay:-2s}.tile:nth-child(4) .art{animation-delay:-3s}
-@keyframes bob{50%{transform:scale(1.06)}}
-.tile p{font-size:.8rem;text-align:center;margin-top:.6rem;line-height:1.4}.tile b{display:block;font-family:var(--serif)}
-@media(max-width:760px){.collage{grid-template-columns:repeat(2,1fr)}}
-/* about */
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:3.5rem}
-@media(max-width:860px){.about{grid-template-columns:1fr}}
-.about p{color:var(--sumi2);margin-bottom:1.1rem}
-.quote{border-left:3px solid var(--shu);padding-left:1.2rem;font-family:var(--serif);font-size:1.15rem;margin:1.8rem 0}
-.quote small{display:block;color:var(--sumi2);font-family:var(--sans);font-size:.8rem}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-.stat{background:var(--washi2);border-radius:14px;text-align:center;padding:1rem .4rem}
-.stat b{display:block;font-family:var(--serif);font-size:2rem;color:var(--shu);line-height:1.1}.stat span{font-size:.72rem;color:var(--sumi2)}
-.card{background:#fff;border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:.9rem;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(35,38,45,.1)}
-.card h4{font-family:var(--serif);color:var(--ai);font-size:.95rem}.card p{margin:0;font-size:.9rem}
+#home{min-height:100vh;padding:9rem 0 4rem;display:flex;align-items:flex-start;overflow:hidden;background:linear-gradient(#f0dfc0,var(--paper) 55%)}
+#heroart{position:absolute;left:0;bottom:0;width:100%;height:100%;z-index:0}
+h1{font-family:var(--head);font-size:clamp(3rem,10vw,6.8rem);line-height:1.05;font-weight:700;margin-bottom:1rem}
+h1 em{font-style:normal;color:var(--red)}
+.lead{font-family:var(--head);font-size:clamp(1.25rem,3.2vw,1.9rem);max-width:30rem;line-height:1.5;margin-bottom:2rem}
+.btn{display:inline-block;padding:.75rem 1.6rem;font-weight:700;border:2px solid var(--ink);background:var(--paper);box-shadow:4px 4px 0 var(--ink);margin:0 .8rem .9rem 0;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.red{background:var(--red);color:#fff}
+/* plaque heading */
+.sh{margin-bottom:2.6rem;display:flex}
+.plaque{display:inline-flex;align-items:center;background:#f7efdc;border:2px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;box-shadow:5px 5px 0 rgba(43,42,51,.25)}
+.plaque span{background:#e7b3a2;border-right:2px solid var(--ink);font-family:var(--head);font-weight:700;padding:.4rem .9rem;font-size:1rem;white-space:nowrap}
+.plaque h2{font-family:var(--head);font-size:clamp(1.5rem,4vw,2.3rem);padding:.2rem 1.3rem;letter-spacing:.03em;line-height:1.3}
+.plaque .seal{margin:0 .8rem 0 0}
+/* waterfall */
+.fall{display:grid;grid-template-columns:minmax(260px,400px) 1fr;gap:3rem;align-items:center}
+@media(max-width:820px){.fall{grid-template-columns:1fr}}
+#wf{width:100%;display:block;border:3px solid var(--ink);box-shadow:8px 8px 0 rgba(43,42,51,.25);background:var(--paper)}
+.about p{margin-bottom:1rem}.about .big{font-family:var(--head);font-size:1.5rem;line-height:1.45}
+.facts{display:grid;gap:.8rem;margin-top:1.4rem}
+.fact{background:#f7efdc;border-left:6px solid var(--blue);padding:.6rem 1rem;border-radius:0 8px 8px 0}
+.fact b{font-family:var(--head);color:var(--blue);margin-right:.4rem}
 /* skills */
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem}
-.skill{background:#fff;border-radius:18px;padding:1.6rem;border:1px solid var(--line);transition:transform .25s}
-.skill:hover{transform:translateY(-5px) rotate(-.6deg)}
-.skill .k{font-family:var(--serif);font-size:2rem;color:var(--shu);line-height:1}
-.skill h3{font-family:var(--serif);font-size:1.2rem;margin:.3rem 0}
-.skill code{display:block;font-family:var(--mono);font-size:.72rem;color:var(--ai);margin-bottom:.6rem}
-.skill p{font-size:.9rem;color:var(--sumi2)}
-.bar{height:8px;background:var(--washi2);border-radius:9px;margin-top:1rem;overflow:hidden}
-.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--matcha),var(--shu));transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
-/* clips */
-.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
-.f{font:inherit;font-size:.85rem;padding:.4rem 1.1rem;border-radius:99px;border:1.5px solid var(--sumi);background:none;cursor:pointer;color:var(--sumi)}
-.f.on{background:var(--sumi);color:var(--washi)}
-.clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.4rem}
-.clip{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
-.clip:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(35,38,45,.12)}
-.clip.hide{display:none}.clip.feat{grid-column:1/-1}
-.reel{background:var(--sumi);color:var(--washi);padding:1.2rem 1.5rem;position:relative;min-height:112px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-.reel::before{content:attr(data-k);position:absolute;right:1rem;top:-.4rem;font-family:var(--serif);font-size:5rem;color:var(--shu);opacity:.35;line-height:1}
-.reel small{font-family:var(--mono);font-size:.68rem;color:var(--sakura);letter-spacing:.1em}
-.reel h3{font-family:var(--serif);font-size:1.4rem;line-height:1.25}
-.reel .tc{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--shu);transition:width 4s linear}
-.clip:hover .tc{width:100%}
-.cb{padding:1.3rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
-.cb>p{font-size:.9rem;color:var(--sumi2)}
-.fm{font-family:var(--mono);font-size:.74rem;color:var(--ai)}
-.tags{display:flex;flex-wrap:wrap;gap:.4rem}.tags span{font-size:.72rem;background:var(--washi2);padding:.15rem .7rem;border-radius:99px}
-.meta{font-size:.76rem;color:var(--sumi2);border-top:1px dashed var(--line);padding-top:.7rem;margin-top:auto}
-.visit{color:var(--shu);font-weight:700;font-size:.85rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem}
+.card{background:#f7efdc;border:2px solid var(--ink);padding:1.3rem;display:flex;gap:1rem;align-items:center;transition:transform .2s,box-shadow .2s;box-shadow:5px 5px 0 rgba(43,42,51,.2)}
+.card:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 rgba(43,42,51,.25)}
+.card svg{width:64px;height:64px;flex:none}
+.card h3{font-family:var(--head);font-size:1.2rem;line-height:1.25}.card p{font-size:.95rem;color:var(--soft);line-height:1.5}
+.bar{height:7px;background:var(--paper2);margin-top:.5rem;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--blue);transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+/* work */
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.f{font:inherit;font-weight:700;font-size:.95rem;padding:.35rem 1.1rem;border:2px solid var(--ink);background:none;cursor:pointer}
+.f.on{background:var(--ink);color:var(--paper)}
+.prints{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.print{background:#f7efdc;border:2px solid var(--ink);outline:1px solid var(--ink);outline-offset:4px;padding:1.4rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .25s;margin:5px}
+.print:hover{transform:translateY(-6px) rotate(-.5deg)}
+.print.hide{display:none}.print.feat{grid-column:1/-1;background:#e9c9a0}
+.print small{font-weight:700;color:var(--red);letter-spacing:.05em}
+.print h3{font-family:var(--head);font-size:1.5rem;line-height:1.2}
+.print p{color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}.tags span{font-size:.82rem;font-weight:500;border:1.5px solid var(--blue);color:var(--blue);padding:0 .6rem;border-radius:99px}
+.visit{font-weight:700;color:var(--red)}
 /* certs */
-.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem}
-.ema{background:#e7c9a0;border-radius:18px 18px 8px 8px;padding:1.6rem 1.1rem 1.2rem;text-align:center;position:relative;box-shadow:0 8px 18px rgba(35,38,45,.12);transition:transform .3s;transform-origin:top center}
-.ema::before{content:'';position:absolute;top:8px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--sumi)}
-.ema:hover{animation:sway 1.4s ease-in-out}
-@keyframes sway{25%{transform:rotate(4deg)}75%{transform:rotate(-4deg)}}
-.ema .k{font-family:var(--serif);font-size:2.4rem;color:var(--shu);line-height:1.1;margin-top:.5rem}
-.ema h3{font-family:var(--serif);font-size:1rem;line-height:1.3;margin:.3rem 0}.ema p{font-size:.78rem;color:#5a4a36;line-height:1.4}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem}
+.ema{background:#e5c28f;border:2px solid var(--ink);border-radius:60px 60px 10px 10px;text-align:center;padding:1.8rem 1rem 1.2rem;transform-origin:top center;box-shadow:4px 4px 0 rgba(43,42,51,.2)}
+.ema:hover{animation:sway 1.3s ease-in-out}@keyframes sway{25%{transform:rotate(4deg)}75%{transform:rotate(-4deg)}}
+.ema svg{width:56px;height:56px}.ema h3{font-family:var(--head);font-size:1.05rem;line-height:1.3;margin:.3rem 0}.ema p{font-size:.88rem;color:#5b4730}
 /* contact */
-#contact{background:var(--sumi);color:var(--washi)}
-#contact .sh h2 em,#contact .take{color:var(--sakura);border-color:var(--sakura)}
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-@media(max-width:820px){.cgrid{grid-template-columns:1fr}}
-.cgrid>div>p{margin-bottom:1.5rem;opacity:.8}
-.crow{display:block;padding:.9rem 0;border-bottom:1px dashed rgba(246,241,231,.2)}
-.crow small{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sakura)}
-.crow:hover{color:var(--sakura)}
+#contact{background:var(--blue);color:var(--paper)}
+#contact .plaque{color:var(--ink)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}@media(max-width:820px){.cgrid{grid-template-columns:1fr}}
+.cgrid p.t{font-family:var(--head);font-size:1.4rem;margin-bottom:1.2rem}
+.crow{display:block;padding:.8rem 0;border-bottom:2px dashed rgba(243,232,207,.35);font-weight:700}
+.crow small{display:block;font-weight:500;opacity:.75}.crow:hover{color:#f6c6d0}
 form{display:flex;flex-direction:column;gap:.8rem}
-input,textarea{font:inherit;padding:.8rem 1rem;border-radius:12px;border:1.5px solid rgba(246,241,231,.25);background:rgba(246,241,231,.06);color:var(--washi)}
-input:focus,textarea:focus{outline:none;border-color:var(--sakura)}
-button.send{font:inherit;font-weight:700;padding:.9rem;border-radius:99px;border:none;background:var(--shu);color:#fff;cursor:pointer;transition:transform .2s}
-button.send:hover{transform:translateY(-3px)}
-#msg{font-size:.9rem;margin-top:.8rem;color:var(--sakura)}
-footer{background:var(--sumi);color:rgba(246,241,231,.6);text-align:center;font-size:.8rem;padding:2rem 1rem 3rem;border-top:1px solid rgba(246,241,231,.1)}
-footer b{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--washi)}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+input,textarea{font:inherit;padding:.8rem 1rem;border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.send{font:inherit;font-weight:700;padding:.9rem;border:2px solid var(--ink);background:var(--red);color:#fff;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.send:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+#msg{margin-top:.8rem;font-weight:700}
+footer{background:var(--ink);color:var(--paper);text-align:center;padding:2rem 1rem 3rem;font-size:.95rem}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
-<div id="thread" aria-hidden="true"><i id="tfill"></i><span id="koi">🐟</span></div>
+<canvas id="bl"></canvas>
+<div id="thread" aria-hidden="true"><i id="tf"></i><b id="td"></b></div>
 
 <nav><div class="nav-in">
-  <a href="#home" class="logo"><span class="hanko">墨</span>Ramdev Chaudhary</a>
-  <div class="links">
-    <a href="#about"><small>私</small>About</a><a href="#skills"><small>技</small>Skills</a><a href="#projects"><small>作</small>Work</a><a href="#certifications"><small>証</small>Certs</a><a href="#contact"><small>文</small>Contact</a>
-  </div>
+  <a href="#home" class="logo"><span class="seal"><svg width="16" height="16" viewBox="-8 -8 16 16"><circle r="6" fill="none" stroke="#f3e8cf" stroke-width="1.6"/><circle r="2" fill="#f3e8cf"/></svg></span>Ramdev</a>
+  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Work</a><a href="#certifications">Certs</a><a href="#contact">Contact</a></div>
 </div></nav>
 
 <section id="home">
-  <div class="scene" aria-hidden="true">
-    <div class="sun"></div>
-    <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none"><path d="M0 300V190C120 120 200 90 330 160S520 230 640 140 860 40 980 130 1130 170 1200 120V300Z" fill="#a9b99c" opacity=".55"/><path d="M0 300V230C150 180 260 210 400 230S650 160 800 210 1050 190 1200 230V300Z" fill="#7d9170" opacity=".7"/><path d="M0 300V265C200 240 400 280 600 262S1000 240 1200 268V300Z" fill="#3a5675" opacity=".85"/></svg>
-    <span class="koi">🐟</span><span class="koi b">🎏</span>
-    <div id="petals"></div>
-  </div>
-  <div class="wrap hero-in">
-    <div class="rec rv"><i></i>REC <span id="tc">00:00:00</span> · Mumbai, IN · open to collaborate</div>
-    <h1 class="rv">Hi, I'm <em>Ramdev.</em></h1>
-    <div class="cap" id="cap" aria-live="off"></div>
-    <p class="hero-p rv">A calm garden where philosophy, physics and mathematics meet. I build ML systems, RF sensing pipelines, security protocols and quantitative models that turn abstract theory into working machinery.</p>
-    <div class="rv">
-      <a href="#projects" class="btn fill">See the work</a>
-      <a href="#contact" class="btn">Say hello</a>
-      <a href="assets/resume.pdf" download class="btn">Résumé ↓</a>
-    </div>
+  <svg id="heroart" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1200 760" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h1>Hi, I'm <em>Ramdev.</em></h1>
+    <p class="lead">ML engineer. I turn signals, markets and security ideas into systems that work.</p>
+    <a href="#projects" class="btn red">See my work</a><a href="#contact" class="btn">Say hello</a><a href="assets/resume.pdf" download class="btn">Résumé</a>
   </div>
 </section>
-
-<div class="wave" aria-hidden="true"><div id="mq"></div></div>
 
 <section id="about">
   <div class="wrap">
-    <div class="sh rv"><span class="take">TAKE 01</span><h2>The <em>curious</em> mind</h2><span class="kj">私</span></div>
-    <div class="collage rv">
-      <div class="tile"><div class="art" style="background:#dfe8f0">🌊</div><p><b>Signals</b>Wi-Fi CSI &amp; RF sensing</p></div>
-      <div class="tile"><div class="art" style="background:#f7ddd6">⛩️</div><p><b>Security</b>VeriData &amp; AI safety</p></div>
-      <div class="tile"><div class="art" style="background:#e4ecd9">🎋</div><p><b>Quant</b>Honest backtesting in C++</p></div>
-      <div class="tile"><div class="art" style="background:#f6e9c8">🏮</div><p><b>Learning</b>IIT Madras · AI &amp; Math</p></div>
-    </div>
-    <div class="about">
-      <div class="rv">
-        <p>I am a Machine Learning practitioner drawn to the places where philosophy, physics, and mathematics touch. The same impulse that compels a physicist to reduce a falling body to a differential equation compels me to reduce a messy real-world signal — a breathing chest, a price series, a language model's behaviour — into something clean, testable, and defensible.</p>
-        <p>My work spans four directions I refuse to keep separate: a <b>contactless respiratory digital twin</b> fusing Wi-Fi Channel State Information with a Physics-Informed Neural Network; an <b>event-driven C++ backtesting engine</b> that makes lookahead bias structurally impossible; a design-science security protocol, <b>VeriData</b>, unifying AI authenticity verification, selective encryption and blockchain-anchored integrity; and <b>AI safety &amp; compliance frameworks</b> grounded in NIST AI RMF and the EU AI Act.</p>
-        <p>VeriData is the project I am most fond of — it arrived as a raw intuition that the same pattern (verify, then protect, then anchor) was missing from three domains at once, and was only later validated into a formal five-phase protocol. Intuition first, rigor second, and a refusal to believe disciplines must stay in their lanes.</p>
-        <div class="quote">“The important thing is not to stop questioning. Curiosity has its own reason for existing.”<small>— Albert Einstein</small></div>
-        <div class="stats">
-          <div class="stat"><b class="count" data-t="5" data-s="+">0</b><span>Flagship projects</span></div>
-          <div class="stat"><b class="count" data-t="5">0</b><span>Certifications</span></div>
-          <div class="stat"><b class="count" data-t="100" data-s="%">0</b><span>Curiosity</span></div>
+    <div class="sh rv"><div class="plaque"><span>Take 1</span><h2>The Curious Mind</h2></div></div>
+    <div class="fall">
+      <svg id="wf" viewBox="0 0 400 520" role="img" aria-label="Animated waterfall painting"></svg>
+      <div class="about rv">
+        <p class="big">I love where math, physics and philosophy meet.</p>
+        <p>I turn messy real-world signals — a breathing chest, a price series, an AI's behaviour — into something clean, testable and honest.</p>
+        <div class="facts">
+          <div class="fact"><b>Learning</b>IIT Madras (AI &amp; Math) · BSc IT</div>
+          <div class="fact"><b>Work</b>AI Engineer, Ratio AI · Intern, Sapio Analytics</div>
+          <div class="fact"><b>Focus</b>ML · RF sensing · Quant · Security · AI safety</div>
         </div>
-      </div>
-      <div class="rv">
-        <div class="card"><h4>Education</h4><p>Domain Scholar (AI &amp; Math) · IIT Madras<br>BSc IT · Ramanand Arya D A V College</p></div>
-        <div class="card"><h4>Experience</h4><p>AI Engineer · Ratio AI<br>AI Intern · Sapio Analytics</p></div>
-        <div class="card"><h4>Disciplines</h4><p>ML Engineering · RF Sensing · Quantitative Finance · Security Protocol Design · AI Safety</p></div>
-        <div class="card"><h4>Working principle</h4><p style="font-family:var(--serif);font-size:1.1rem">“Know thy self.”</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills" style="background:var(--washi2)">
+<section id="skills" style="background:var(--paper2)">
   <div class="wrap">
-    <div class="sh rv"><span class="take">TAKE 02</span><h2>Skills &amp; <em>craft</em></h2><span class="kj">技</span></div>
-    <div class="grid3">
-      <div class="skill rv"><div class="k">Σ</div><h3>Statistical Learning</h3><code>f̂ = argmin 𝔼[L(y, f(x))] + λ‖f‖²</code><p>Statistical learning, model validation &amp; backtesting, feature engineering — grounded in the mathematics of generalisation rather than the folklore of leaderboards.</p><div class="bar"><i data-w="92"></i></div></div>
-      <div class="skill rv"><div class="k">∫</div><h3>Time Series &amp; Forecasting</h3><code>xₜ = φ₁xₜ₋₁ + … + εₜ</code><p>Forecasting, demand modeling, and quantitative analysis pipelines — where stationarity, drift and regime change are the real antagonists.</p><div class="bar"><i data-w="88"></i></div></div>
-      <div class="skill rv"><div class="k">λ</div><h3>Quantitative Finance</h3><code>impact ≈ Y·σ·√(Q / V)</code><p>Event-driven backtesting, market microstructure, and transaction-cost modelling — treating Sharpe ratios with appropriate suspicion.</p><div class="bar"><i data-w="82"></i></div></div>
-      <div class="skill rv"><div class="k">Θ</div><h3>AI Safety &amp; Security</h3><code>Authenticity ∧ Integrity ∧ Confidentiality</code><p>Prompt-injection defenses, deepfake detection, post-quantum readiness, protocol design grounded in NIST AI RMF &amp; the EU AI Act.</p><div class="bar"><i data-w="85"></i></div></div>
-      <div class="skill rv"><div class="k">ℵ</div><h3>Systems &amp; C++</h3><code>RAII · move-semantics · zero-cost abstraction</code><p>Event-driven architecture, RAII, STL, CMake, pybind11 — the substrate on which the mathematics can actually run.</p><div class="bar"><i data-w="85"></i></div></div>
-      <div class="skill rv"><div class="k">Ψ</div><h3>RF Sensing &amp; Digital Twins</h3><code>P(t) = V(t)/C + R·dV(t)/dt</code><p>ESP32, Wi-Fi CSI, physics-informed signal processing — reconstructing human physiology from the perturbations it leaves in the electromagnetic field.</p><div class="bar"><i data-w="80"></i></div></div>
+    <div class="sh rv"><div class="plaque"><span>Take 2</span><h2>Skills</h2></div></div>
+    <div class="grid" id="sk">
+      <div class="card rv"><svg data-l="3,2,0.5"></svg><div style="flex:1"><h3>Statistical Learning</h3><p>Models that generalise, not just score well.</p><div class="bar"><i data-w="92"></i></div></div></div>
+      <div class="card rv"><svg data-l="2,3,1.2"></svg><div style="flex:1"><h3>Time Series</h3><p>Forecasting through drift and regime change.</p><div class="bar"><i data-w="88"></i></div></div></div>
+      <div class="card rv"><svg data-l="4,3,0.3"></svg><div style="flex:1"><h3>Quant Finance</h3><p>Backtesting with real costs and market impact.</p><div class="bar"><i data-w="82"></i></div></div></div>
+      <div class="card rv"><svg data-l="5,4,0.9"></svg><div style="flex:1"><h3>AI Safety &amp; Security</h3><p>Prompt-injection defence, deepfakes, post-quantum.</p><div class="bar"><i data-w="85"></i></div></div></div>
+      <div class="card rv"><svg data-l="3,4,1.6"></svg><div style="flex:1"><h3>Systems &amp; C++</h3><p>Event-driven engines, CMake, pybind11.</p><div class="bar"><i data-w="85"></i></div></div></div>
+      <div class="card rv"><svg data-l="5,6,0.2"></svg><div style="flex:1"><h3>RF Sensing</h3><p>ESP32 and Wi-Fi CSI digital twins.</p><div class="bar"><i data-w="80"></i></div></div></div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="wrap">
-    <div class="sh rv"><span class="take">TAKE 03</span><h2>Selected <em>clips</em></h2><span class="kj">作</span></div>
-    <div class="filters rv">
-      <button class="f on" data-f="all">All</button><button class="f" data-f="ml">ML &amp; Research</button><button class="f" data-f="quant">Quant</button><button class="f" data-f="safety">AI Safety</button>
-    </div>
-    <div class="clips">
-      <article class="clip rv" data-c="ml"><div class="reel" data-k="一"><small>CLIP 01 · HEALTH-TECH · AAVISHKAR 2026</small><h3>Aero-Breathe CSI</h3><i class="tc"></i></div><div class="cb"><div class="fm">P(t) = V(t)/C + R·dV(t)/dt</div><p>A contactless respiratory digital twin. Two ESP32 boards capture Wi-Fi Channel State Information across a patient's chest; a Butterworth bandpass isolates the breathing waveform; a Physics-Informed Neural Network constrained by the single-compartment lung model reconstructs respiratory rate. Served live with a 15-second apnea alert.</p><div class="tags"><span>Wi-Fi CSI</span><span>ESP32</span><span>PINN · PyTorch</span><span>Streamlit</span></div><p class="meta">Aavishkar Research Convention · ₹1,350 hardware cap · VitalCSI benchmark: 1.20 brpm MAE</p></div></article>
-      <article class="clip rv" data-c="quant"><div class="reel" data-k="二"><small>CLIP 02 · QUANT · C++ 2026</small><h3>Honest Backtesting Engine</h3><i class="tc"></i></div><div class="cb"><div class="fm">Sharpe_true = Sharpe_reported − costs</div><p>An event-driven C++ backtester architected to make lookahead bias structurally impossible, then used to quantify how much apparent alpha survives spread, slippage, fees, and square-root market impact. Ships with walk-forward validation, a deflated Sharpe calculation, and capacity curves across three strategies.</p><div class="tags"><span>C++17</span><span>CMake</span><span>Market Microstructure</span><span>pybind11</span></div><p class="meta">Event-driven engine · 5-layer cost model · Square-root impact · Deflated Sharpe</p></div></article>
-      <article class="clip rv" data-c="ml"><div class="reel" data-k="三"><small>CLIP 03 · GOVERNMENT · AI</small><h3>SAKSHAM Skill Census</h3><i class="tc"></i></div><div class="cb"><div class="fm">X → φ(X) → Sovereign Model</div><p>Feature engineering for the Sovereign AI Model powering the Government of Maharashtra's hyperlocal Smart Digital Skill Census. Formulating the analytical models on which the core AI engine runs.</p><div class="tags"><span>Sapio Analytics</span><span>Feature Engineering</span><span>Hyperlocal AI</span><span>Govt. of Maharashtra</span></div><p class="meta">Government project · H-West Ward, Mumbai · Sovereign AI · <a class="visit" href="https://sapioanalytics.com/" target="_blank" rel="noopener">Visit ↗</a></p></div></article>
-      <article class="clip rv" data-c="safety"><div class="reel" data-k="四"><small>CLIP 04 · SECURITY · COMPLIANCE</small><h3>Ratio AI</h3><i class="tc"></i></div><div class="cb"><div class="fm">∀x (Injection(x) → ¬Execute(x))</div><p>Building defenses against prompt injection and data poisoning attacks for LLM systems. Created the security and compliance framework measuring AI accountability, aligned with NIST AI RMF and the EU AI Act.</p><div class="tags"><span>LLM Security</span><span>NIST AI RMF</span><span>EU AI Act</span><span>Compliance</span></div><p class="meta">Prompt injection defense · Data poisoning · AI accountability · <a class="visit" href="https://ratioai.in/" target="_blank" rel="noopener">Visit ↗</a></p></div></article>
-      <article class="clip feat rv" data-c="safety"><div class="reel" data-k="五"><small>CLIP 05 · DESIGN SCIENCE · SYIT 2026 · ★ FEATURED</small><h3>VeriData Protocol</h3><i class="tc"></i></div><div class="cb"><div class="fm">AI_Verify ≺ Selective_Encrypt ≺ Merkle_Anchor ≺ Ledger_Verify</div><p>An application-layer security protocol for authentic and tamper-proof data exchange in regulated environments. Combines lightweight AI authenticity verification (DistilBERT, CNN deepfake detection) with risk-based selective encryption (AES, ChaCha20-Poly1305, PQ-ready KEM) and blockchain-anchored Merkle roots — securing data against synthetic-media injection, insider tampering, and post-quantum adversaries. Formalised as a five-phase protocol: submission, AI verification, risk-classified encryption, integrity anchoring, and secure retrieval.</p><div class="tags"><span>Design Science Research</span><span>Post-Quantum Crypto</span><span>Blockchain · Merkle</span><span>Deepfake Detection</span><span>Selective Encryption</span><span>NIST-ready</span></div><p class="meta">5-phase protocol · AI-first verification before cryptography · Selective risk-based encryption · Future-resilient against quantum adversaries</p></div></article>
+    <div class="sh rv"><div class="plaque"><span>Take 3</span><h2>Selected Work</h2></div></div>
+    <div class="filters rv"><button class="f on" data-f="all">All</button><button class="f" data-f="ml">ML</button><button class="f" data-f="quant">Quant</button><button class="f" data-f="safety">AI Safety</button></div>
+    <div class="prints">
+      <article class="print rv" data-c="ml"><small>HEALTH-TECH · 2026</small><h3>Aero-Breathe CSI</h3><p>Contactless breathing monitor: Wi-Fi signals plus a physics-informed neural network, with a live 15-second apnea alert.</p><div class="tags"><span>Wi-Fi CSI</span><span>ESP32</span><span>PyTorch</span></div></article>
+      <article class="print rv" data-c="quant"><small>QUANT · C++ · 2026</small><h3>Honest Backtester</h3><p>An event-driven engine where lookahead bias can't happen, showing how much "alpha" survives real trading costs.</p><div class="tags"><span>C++17</span><span>CMake</span><span>pybind11</span></div></article>
+      <article class="print rv" data-c="ml"><small>GOVERNMENT · AI</small><h3>SAKSHAM Skill Census</h3><p>Feature engineering for the AI behind Maharashtra's hyperlocal Digital Skill Census. <a class="visit" href="https://sapioanalytics.com/" target="_blank" rel="noopener">Visit ↗</a></p><div class="tags"><span>Sapio Analytics</span><span>Feature Eng.</span></div></article>
+      <article class="print rv" data-c="safety"><small>SECURITY · COMPLIANCE</small><h3>Ratio AI</h3><p>Defences against prompt injection and data poisoning, plus an AI-accountability framework (NIST AI RMF, EU AI Act). <a class="visit" href="https://ratioai.in/" target="_blank" rel="noopener">Visit ↗</a></p><div class="tags"><span>LLM Security</span><span>Compliance</span></div></article>
+      <article class="print feat rv" data-c="safety"><small>★ FEATURED · DESIGN SCIENCE · 2026</small><h3>VeriData Protocol</h3><p>A five-step security protocol for tamper-proof data: AI checks authenticity, risk decides the encryption, and a blockchain Merkle root locks integrity — ready for post-quantum attackers.</p><div class="tags"><span>Deepfake Detection</span><span>Post-Quantum Crypto</span><span>Blockchain</span><span>Selective Encryption</span></div></article>
     </div>
   </div>
 </section>
 
-<section id="certifications" style="background:var(--washi2)">
+<section id="certifications" style="background:var(--paper2)">
   <div class="wrap">
-    <div class="sh rv"><span class="take">TAKE 04</span><h2>Wishes &amp; <em>marks</em></h2><span class="kj">証</span></div>
-    <div class="certs">
-      <div class="ema rv"><div class="k">ρ</div><h3>Research Analyst</h3><p>StockGro<br>Financial Analysis · Markets</p></div>
-      <div class="ema rv"><div class="k">μ</div><h3>Machine Learning Engineer</h3><p>MSDE Skill India<br>Statistical Learning · Evaluation</p></div>
-      <div class="ema rv"><div class="k">δ</div><h3>Ethical Hacking</h3><p>NPTEL · IIT Kharagpur<br>Penetration Testing · VA</p></div>
-      <div class="ema rv"><div class="k">ν</div><h3>Deep Learning for NLP</h3><p>NPTEL · IIT Kharagpur<br>Deep Learning · NLP</p></div>
-      <div class="ema rv"><div class="k">ε</div><h3>Business Fundamentals</h3><p>NPTEL · IIT Bombay<br>Entrepreneurship · Strategy</p></div>
+    <div class="sh rv"><div class="plaque"><span>Take 4</span><h2>Certifications</h2></div></div>
+    <div class="certs" id="ct">
+      <div class="ema rv"><svg data-l="2,1,0.4"></svg><h3>Research Analyst</h3><p>StockGro</p></div>
+      <div class="ema rv"><svg data-l="3,2,1"></svg><h3>ML Engineer</h3><p>MSDE Skill India</p></div>
+      <div class="ema rv"><svg data-l="4,3,0.6"></svg><h3>Ethical Hacking</h3><p>NPTEL · IIT Kharagpur</p></div>
+      <div class="ema rv"><svg data-l="5,3,1.4"></svg><h3>Deep Learning for NLP</h3><p>NPTEL · IIT Kharagpur</p></div>
+      <div class="ema rv"><svg data-l="5,4,0.2"></svg><h3>Business Fundamentals</h3><p>NPTEL · IIT Bombay</p></div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
-    <div class="sh rv"><span class="take">FINAL TAKE</span><h2>Let's <em>correspond</em></h2><span class="kj" style="-webkit-text-stroke-color:var(--sakura);color:transparent">文</span></div>
+    <div class="sh rv"><div class="plaque"><span>Take 5</span><h2>Say Hello</h2></div></div>
     <div class="cgrid">
       <div class="rv">
-        <p>Ready to collaborate on a problem worth thinking about? Send a letter — I read everything, and answer most.</p>
+        <p class="t">Got a problem worth thinking about? Send me a note.</p>
         <a class="crow" href="mailto:ramoware@gmail.com"><small>Email</small>ramoware@gmail.com</a>
         <a class="crow" href="https://www.linkedin.com/in/ramdevchaudhary" target="_blank" rel="noopener"><small>LinkedIn</small>linkedin.com/in/ramdevchaudhary</a>
         <a class="crow" href="https://github.com/ramoware" target="_blank" rel="noopener"><small>GitHub</small>github.com/ramoware</a>
@@ -266,51 +186,120 @@ footer b{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--was
         <form id="form" action="https://formspree.io/f/xqenrvnb" method="POST">
           <input name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Your email" required><input name="subject" placeholder="Subject" required>
           <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-          <button class="send" id="sb">Send letter ✉</button>
-        </form>
-        <div id="msg"></div>
+          <button class="send" id="sb">Send</button>
+        </form><div id="msg"></div>
       </div>
     </div>
   </div>
 </section>
-
-<footer><b>Ramdev Chaudhary</b>Machine Learning Engineer — for the joy of understanding, and for the use of it.<br><br>© 2026 · <span id="clock">--:--:--</span> IST · Hosted on GitHub Pages</footer>
+<footer>© 2026 Ramdev Chaudhary · Hosted on GitHub Pages</footer>
 
 <script>
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-/* petals */
-$('#petals').innerHTML=Array.from({length:16},()=>`<i class="petal" style="left:${Math.random()*100}%;animation-duration:${9+Math.random()*9}s;animation-delay:-${Math.random()*14}s;transform:scale(${.6+Math.random()*.8})"></i>`).join('');
-/* marquee */
-const q=['知るは楽しみ — Know thyself','E = mc²','e^{iπ} + 1 = 0','Cogito, ergo sum','Veritas per cryptographiam','Mathematics is the music of reason','iℏ ∂ψ/∂t = Ĥψ','a² + b² = c²'];
-$('#mq').innerHTML=[...q,...q].map(t=>`<span>${t} &nbsp;❀</span>`).join('');
-/* Opus-style captions: one timeline, word-by-word highlight */
-const lines=['I build ML systems that listen to breathing','I make AI honest, secure and accountable','I teach backtests to tell the truth'];
-let li=0,wi=0;const cap=$('#cap');
-function show(){cap.innerHTML=lines[li].split(' ').map(w=>`<span>${w}</span>`).join('');wi=0}
-show();
-setInterval(()=>{const w=cap.children;if(wi<w.length){w[wi].classList.add('on');if(wi)w[wi-1].classList.remove('on');wi++}else if(wi++>w.length+3){li=(li+1)%lines.length;show()}},320);
-/* REC timecode */
-const t0=Date.now(),p=n=>String(n).padStart(2,'0');
-setInterval(()=>{const s=(Date.now()-t0)/1e3|0;$('#tc').textContent=`${p(s/3600|0)}:${p(s/60%60|0)}:${p(s%60)}`;
-$('#clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'})},1000);
-/* reveal + counters + bars */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
- e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');
- e.target.querySelectorAll('.count').forEach(c=>{const T=+c.dataset.t,s=c.dataset.s||'';let n=0;const k=setInterval(()=>{n+=Math.ceil(T/30);if(n>=T){n=T;clearInterval(k)}c.textContent=n+s},35)});
- io.unobserve(e.target)}),{threshold:.15});
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],PI=Math.PI;
+const noise=(x,s)=>(Math.sin(x*1.3+s)+.5*Math.sin(x*2.7+s*2)+.25*Math.sin(x*5.1+s*3))/1.75; // -1..1
+const rnd=i=>{const v=Math.sin(i*127.1+311.7)*43758.5453;return v-Math.floor(v)};
+
+/* ---------- HERO: Fuji from a gaussian-ish cone, ridges from summed sines, seigaiha waves, koi from a width profile ---------- */
+(function(){
+ let s='';
+ s+=`<defs><pattern id="sg" width="80" height="40" patternUnits="userSpaceOnUse"><animateTransform attributeName="patternTransform" type="translate" from="0 0" to="80 0" dur="14s" repeatCount="indefinite"/><rect width="80" height="40" fill="#2f5389"/>`;
+ [[0,0],[80,0],[40,20],[0,40],[80,40]].forEach(([x,y])=>[40,32,24,16,8].forEach((r,i)=>s+=`<circle cx="${x}" cy="${y}" r="${r}" fill="${i%2?'#2f5389':'#6f93b8'}" stroke="#f3e8cf" stroke-width="1.4"/>`));
+ s+=`</pattern></defs>`;
+ // sun: red disc + rosette of overlapping circles
+ s+=`<circle cx="930" cy="190" r="92" fill="#c4472f" opacity=".92"/>`;
+ for(let i=0;i<6;i++){const a=i*PI/3;s+=`<circle cx="${930+46*Math.cos(a)}" cy="${190+46*Math.sin(a)}" r="46" fill="none" stroke="#f3e8cf" stroke-width="1.5" opacity=".6"/>`}
+ // Fuji: y = base - H / (1 + ((x-c)/w)^2)^1.4 with snow cap
+ const fuji=(c,H,w,base)=>{let d=`M0 ${base}`;for(let x=0;x<=1200;x+=8)d+=`L${x} ${base-H*Math.pow(1+Math.pow((x-c)/w,2),-1.6)}`;return d+`L1200 ${base}Z`};
+ s+=`<path d="${fuji(300,330,210,560)}" fill="#8aa6c4"/>`;
+ // snow cap: clip same path above y=330
+ s+=`<clipPath id="cap"><rect y="0" width="1200" height="${560-330*.7}"/></clipPath><path d="${fuji(300,330,210,560)}" fill="#f7efdc" clip-path="url(#cap)"/>`;
+ // ridges
+ const ridge=(base,amp,f,seed,col)=>{let d=`M0 760`;for(let x=0;x<=1200;x+=10)d+=`L${x} ${base-amp*(.5+.5*noise(x*f,seed))}`;return `<path d="${d}L1200 760Z" fill="${col}"/>`};
+ s+=ridge(560,110,.006,1,'#b9a6c2')+ridge(600,80,.009,4,'#8fc0b4');
+ // pine grove: trunk quadratic + flat canopies
+ const pine=(x,y,k,d)=>{let t=`<path d="M${x} ${y}Q${x-14*k*d} ${y-60*k} ${x+12*k*d} ${y-110*k}" fill="none" stroke="#3a2e26" stroke-width="${5*k}" stroke-linecap="round"/>`;
+  [.55,.8,1].forEach((u,i)=>{const px=(1-u)*(1-u)*x+2*(1-u)*u*(x-14*k*d)+u*u*(x+12*k*d),py=(1-u)*(1-u)*y+2*(1-u)*u*(y-60*k)+u*u*(y-110*k);
+   t+=`<ellipse cx="${px+8*k*d*(i%2?-1:1)}" cy="${py}" rx="${(24+14*u)*k}" ry="${9*k}" fill="#35613f"/><ellipse cx="${px+8*k*d*(i%2?-1:1)}" cy="${py-4*k}" rx="${(18+10*u)*k}" ry="${5*k}" fill="#5f8a55"/>`});return t};
+ s+=pine(80,640,1.5,1)+pine(170,650,1.1,-1)+pine(1080,650,1.4,-1)+pine(1150,640,1.7,1);
+ // water
+ s+=`<rect y="620" width="1200" height="140" fill="url(#sg)"/>`;
+ // koi
+ const koi=(id,col)=>{let up='',lo='';for(let i=0;i<=24;i++){const t=i/24,x=-70+120*t,w=17*Math.sin(PI*Math.pow(t,.7));up+=`${i?'L':'M'}${x} ${-w}`;lo=`L${x} ${w}`+lo}
+  return `<g id="${id}"><path d="${up}L56 -4L84 -22L72 0L84 22L56 4${lo}Z" fill="${col}" stroke="#2b2a33" stroke-width="2"/><circle cx="-36" cy="-4" r="9" fill="#f7efdc" opacity=".85"/><circle cx="-54" cy="-5" r="2.2" fill="#2b2a33"/></g>`};
+ s+=koi('k1','#c4472f')+koi('k2','#e0a83c');
+ $('#heroart').innerHTML=s;
+ const k1=$('#k1'),k2=$('#k2');
+ (function loop(t){[[k1,0,690,.045],[k2,1,730,.03]].forEach(([k,o,y0,v])=>{const x=((t*v+o*600)%1500)-150,yy=y0+22*Math.sin(x/70),a=Math.atan2(22*Math.cos(x/70)/70,1);k.setAttribute('transform',`translate(${x} ${yy}) rotate(${a*57.3}) scale(${o?.6:.85})`)});requestAnimationFrame(loop)})(0);
+})();
+
+/* ---------- WATERFALL: ridges from gaussians, pines from curves, white stripes loop down forever ---------- */
+(function(){
+ let s=`<defs>
+ <clipPath id="fc"><path id="fp"/></clipPath>
+ <pattern id="st1" width="70" height="160" patternUnits="userSpaceOnUse"><animateTransform attributeName="patternTransform" type="translate" from="0 0" to="0 160" dur="1.9s" repeatCount="indefinite"/>${Array.from({length:12},(_,i)=>`<rect x="${(i*6+rnd(i)*3)}" y="${(rnd(i+9)*150)}" width="${3+rnd(i+3)*4}" height="${22+rnd(i+5)*55}" fill="#f7efdc"/>`).join('')}</pattern>
+ <pattern id="st2" width="70" height="200" patternUnits="userSpaceOnUse"><animateTransform attributeName="patternTransform" type="translate" from="0 0" to="0 200" dur="3.1s" repeatCount="indefinite"/>${Array.from({length:10},(_,i)=>`<rect x="${(i*7+rnd(i+20)*4)}" y="${(rnd(i+30)*190)}" width="${2+rnd(i+7)*3}" height="${30+rnd(i+8)*70}" fill="#a9c4de"/>`).join('')}</pattern></defs>`;
+ s+=`<rect width="400" height="520" fill="#f3e8cf"/>`;
+ // sun rosette
+ for(let i=0;i<6;i++){const a=i*PI/3;s+=`<circle cx="${315+20*Math.cos(a)}" cy="${92+20*Math.sin(a)}" r="24" fill="#e0a83c" opacity=".55"/>`}
+ // mountains: sum of gaussians, notch left open where the fall pours
+ const g=(x,c,w)=>Math.exp(-(((x-c)/w)**2)),m=x=>130*g(x,70,62)+105*g(x,335,55)+60*g(x,200,110);
+ let back='M0 260',front='M0 260';
+ for(let x=0;x<=400;x+=4){back+=`L${x} ${240-m(x)*.7-8*noise(x*.05,2)}`;front+=`L${x} ${250-m(x)+((x>165&&x<235)?0:0)}`}
+ s+=`<path d="${back}L400 260Z" fill="#a9c4de"/><path d="${front}L400 260Z" fill="#5f83ad"/>`;
+ [[70,250-130],[335,250-105]].forEach(([x,y])=>s+=`<path d="M${x-15} ${y+24}L${x-4} ${y+10}L${x} ${y}L${x+6} ${y+12}L${x+15} ${y+24}Z" fill="#f7efdc" opacity=".9"/>`);
+ // ground with mounds + grass blades
+ s+=`<rect y="232" width="400" height="290" fill="#7b9066"/>`;
+ for(let i=0;i<16;i++){const x=rnd(i)*400,y=262+rnd(i+40)*130,r=16+rnd(i+5)*18;if(x>130&&x<270)continue;s+=`<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r*.28}" fill="#a3b87e"/>`}
+ for(let i=0;i<22;i++){const x=rnd(i+60)*400,y=250+rnd(i+70)*150;if(x>140&&x<260)continue;s+=`<path d="M${x} ${y}q${6*Math.sin(i)} -14 ${3*Math.cos(i)*4} -30" fill="none" stroke="#2b2a33" stroke-width=".9" opacity=".6"/>`}
+ // pines
+ const pine=(x,y,k,d)=>{let t=`<path d="M${x} ${y}Q${x-10*k*d} ${y-50*k} ${x+10*k*d} ${y-95*k}" fill="none" stroke="#3a2e26" stroke-width="${5*k}" stroke-linecap="round"/>`;
+  [.5,.75,1].forEach((u,i)=>{const px=(1-u)**2*x+2*(1-u)*u*(x-10*k*d)+u*u*(x+10*k*d),py=(1-u)**2*y+2*(1-u)*u*(y-50*k)+u*u*(y-95*k),o=8*k*d*(i%2?-1:1);
+   t+=`<ellipse cx="${px+o}" cy="${py}" rx="${(22+12*u)*k}" ry="${8*k}" fill="#35613f"/><ellipse cx="${px+o}" cy="${py-3*k}" rx="${(16+8*u)*k}" ry="${4.5*k}" fill="#6a9558"/>`});return t};
+ s+=pine(40,330,1.2,1)+pine(100,300,.8,-1)+pine(345,320,1.1,-1)+pine(300,290,.7,1);
+ // waterfall body: wavy edges
+ let L='',R='';const xl=y=>166+4*Math.sin(y/13),xr=y=>234+4*Math.sin(y/10+1);
+ for(let y=205;y<=408;y+=6){L+=`${y>205?'L':'M'}${xl(y)} ${y}`;R=`L${xr(y)} ${y}`+R}
+ const body=L+R+'Z';
+ s+=`<path d="${body}" fill="#2f5389"/><g clip-path="url(#fc)"><rect x="150" y="200" width="100" height="215" fill="url(#st2)"/><rect x="150" y="200" width="100" height="215" fill="url(#st1)"/></g>`;
+ for(let i=0;i<5;i++){let d='';for(let y=205;y<=408;y+=6)d+=`${y>205?'L':'M'}${176+i*12+2.5*Math.sin(y/9+i)} ${y}`;s+=`<path d="${d}" fill="none" stroke="#2b2a33" stroke-width=".8" opacity=".5"/>`}
+ s+=`<path d="${L}" fill="none" stroke="#2b2a33" stroke-width="2"/><path d="${R.replace(/^L/,'M').replace(/L/g,'L')}" fill="none" stroke="#2b2a33" stroke-width="2"/>`;
+ // pool with sine wave lines + moving whitecaps
+ s+=`<rect y="400" width="400" height="120" fill="#4d76a8"/>`;
+ for(let r=0;r<4;r++){const y=424+r*26;let d='';for(let x=0;x<=400;x+=5)d+=`${x?'L':'M'}${x} ${y+3*Math.sin(x/22+r)}`;s+=`<path d="${d}" fill="none" stroke="#2b2a33" stroke-width=".9" opacity=".6"/>`;
+  s+=`<g><animateTransform attributeName="transform" type="translate" from="0 0" to="${r%2?-44:44} 0" dur="${5+r}s" repeatCount="indefinite"/>${Array.from({length:12},(_,i)=>`<path d="M${(i-1)*44+r*9} ${y+14}q9 -11 18 0q-9 -4 -18 0" fill="#f7efdc"/>`).join('')}</g>`}
+ // mist
+ s+=`<ellipse cx="200" cy="404" rx="52" ry="11" fill="#f7efdc" opacity=".75"><animate attributeName="ry" values="9;17;9" dur="2.6s" repeatCount="indefinite"/><animate attributeName="rx" values="48;62;48" dur="3.4s" repeatCount="indefinite"/></ellipse>`;
+ s+=`<rect x="3" y="3" width="394" height="514" fill="none" stroke="#2b2a33" stroke-width="3"/>`;
+ $('#wf').innerHTML=s;$('#fp').setAttribute('d',body);
+})();
+
+/* ---------- Lissajous glyphs: x=sin(at+d), y=sin(bt) ---------- */
+$$('svg[data-l]').forEach(v=>{const[a,b,d]=v.dataset.l.split(',').map(Number);let p='';for(let i=0;i<=200;i++){const t=i/200*2*PI;p+=`${i?'L':'M'}${32+24*Math.sin(a*t+d)} ${32+24*Math.sin(b*t)}`}
+ v.setAttribute('viewBox','0 0 64 64');v.innerHTML=`<circle cx="32" cy="32" r="29" fill="#f3e8cf" stroke="#2b2a33" stroke-width="2"/><path d="${p}" fill="none" stroke="#c4472f" stroke-width="2.2" stroke-linejoin="round"/>`});
+
+/* ---------- Blossoms: fall across the whole site, nudged by scrolling ---------- */
+(function(){
+ const cv=$('#bl'),c=cv.getContext('2d');let P=[],wind=0,ly=scrollY;
+ const size=()=>{cv.width=innerWidth;cv.height=innerHeight};size();addEventListener('resize',size);
+ const mk=i=>({x:Math.random()*cv.width,y:i?-20:Math.random()*cv.height,s:6+Math.random()*8,r:Math.random()*6,vr:(Math.random()-.5)*.04,vy:.6+Math.random()*.9,ph:Math.random()*6,c:Math.random()<.5?'#f6bfcb':'#fbdde3'});
+ P=Array.from({length:Math.min(55,innerWidth/18|0)},()=>mk(0));
+ addEventListener('scroll',()=>{wind+=(scrollY-ly)*.03;ly=scrollY;wind=Math.max(-4,Math.min(4,wind))},{passive:true});
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ (function f(t){c.clearRect(0,0,cv.width,cv.height);wind*=.95;
+  P.forEach((p,i)=>{p.y+=p.vy;p.x+=Math.sin(p.ph+p.y/55)*.8+.35+wind;p.r+=p.vr;
+   if(p.y>cv.height+20||p.x>cv.width+30||p.x<-40){P[i]=mk(1);return}
+   c.save();c.translate(p.x,p.y);c.rotate(p.r);c.scale(1,.55+.45*Math.cos(p.ph+t/700));c.fillStyle=p.c;c.strokeStyle='rgba(196,71,47,.35)';c.lineWidth=.8;
+   const s=p.s;c.beginPath();c.moveTo(0,s*.7);c.bezierCurveTo(-s*1.1,s*.3,-s*.9,-s,-s*.15,-s);c.lineTo(0,-s*.7);c.lineTo(s*.15,-s);c.bezierCurveTo(s*.9,-s,s*1.1,s*.3,0,s*.7);c.fill();c.stroke();c.restore()});
+  requestAnimationFrame(f)})(0);
+})();
+
+/* ---------- misc ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');io.unobserve(e.target)}),{threshold:.15});
 $$('.rv').forEach(e=>io.observe(e));
-/* one-take thread: a single koi follows the scroll */
-const koi=$('#koi'),fill=$('#tfill'),th=$('#thread');
-addEventListener('scroll',()=>{const r=scrollY/(document.body.scrollHeight-innerHeight||1),h=th.clientHeight;fill.style.height=r*h+'px';koi.style.top=r*h-8+'px'},{passive:true});
-/* filter */
-$$('.f').forEach(b=>b.onclick=()=>{$$('.f').forEach(x=>x.classList.remove('on'));b.classList.add('on');
- $$('.clip').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f))});
-/* form */
+const tf=$('#tf'),td=$('#td');addEventListener('scroll',()=>{const h=$('#thread').clientHeight,r=scrollY/(document.body.scrollHeight-innerHeight||1);tf.style.height=r*h+'px';td.style.top=r*h-7+'px'},{passive:true});
+$$('.f').forEach(b=>b.onclick=()=>{$$('.f').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.print').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f))});
 $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,m=$('#msg');$('#sb').disabled=true;m.textContent='Sending…';
- try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
-  if(r.ok){m.textContent='Thank you — your letter has arrived 🌸';f.reset()}else throw 0}
- catch{m.textContent='Something went wrong — please email me directly.'}
- $('#sb').disabled=false});
+ try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.textContent='Thank you — message received!';f.reset()}else throw 0}catch{m.textContent='Something went wrong — please email me directly.'}$('#sb').disabled=false});
 </script>
 </body>
 </html>
