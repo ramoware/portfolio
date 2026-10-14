@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ramdev Chaudhary — ML Engineer</title>
-<meta name="description" content="Ramdev Chaudhary — ML engineer building ML systems, RF sensing, security protocols and quant models."/>
+<title>Ramdev Chaudhary ML Engineer</title>
+<meta name="description" content="Ramdev Chaudhary ML engineer building ML systems, RF sensing, security protocols and quant models."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -114,7 +114,7 @@ footer{background:var(--ink);color:var(--paper);text-align:center;padding:1.5rem
         <div class="sh rv"><div class="plaque"><span>Take 1</span><h2>The Curious Mind</h2></div></div>
         <div class="panel rv">
           <p class="big">I love where math, physics and philosophy meet.</p>
-          <p>I turn messy real-world signals — a breathing chest, a price series, an AI's behaviour — into something clean, testable and honest.</p>
+          <p>I turn messy real-world signals a breathing chest, a price series, an AI's behaviour into something clean, testable and honest.</p>
         </div>
       </div>
       <div class="facts rv">
@@ -148,8 +148,8 @@ footer{background:var(--ink);color:var(--paper);text-align:center;padding:1.5rem
       <article class="print rv" data-c="ml"><small>HEALTH-TECH · 2026</small><h3>Aero-Breathe CSI</h3><p>Contactless breathing monitor: Wi-Fi signals plus a physics-informed neural network, with a live 15-second apnea alert.</p><div class="tags"><span>Wi-Fi CSI</span><span>ESP32</span><span>PyTorch</span></div></article>
       <article class="print rv" data-c="quant"><small>QUANT · C++ · 2026</small><h3>Honest Backtester</h3><p>An event-driven engine where lookahead bias can't happen, showing how much "alpha" survives real trading costs.</p><div class="tags"><span>C++17</span><span>CMake</span><span>pybind11</span></div></article>
       <article class="print rv" data-c="ml"><small>GOVERNMENT · AI</small><h3>SAKSHAM Skill Census</h3><p>Feature engineering for the AI behind Maharashtra's hyperlocal Digital Skill Census. <a class="visit" href="https://sapioanalytics.com/" target="_blank" rel="noopener">Visit ↗</a></p><div class="tags"><span>Sapio Analytics</span><span>Feature Eng.</span></div></article>
-      <article class="print rv" data-c="safety"><small>SECURITY · COMPLIANCE</small><h3>Ratio AI</h3><p>Defences against prompt injection and data poisoning, plus an AI-accountability framework (NIST AI RMF, EU AI Act). <a class="visit" href="https://ratioai.in/" target="_blank" rel="noopener">Visit ↗</a></p><div class="tags"><span>LLM Security</span><span>Compliance</span></div></article>
-      <article class="print feat rv" data-c="safety"><small>★ FEATURED · DESIGN SCIENCE · 2026</small><h3>VeriData Protocol</h3><p>A five-step security protocol for tamper-proof data: AI checks authenticity, risk decides the encryption, and a blockchain Merkle root locks integrity — ready for post-quantum attackers.</p><div class="tags"><span>Deepfake Detection</span><span>Post-Quantum Crypto</span><span>Blockchain</span><span>Selective Encryption</span></div></article>
+      <article class="print rv" data-c="safety"><small>SECURITY · COMPLIANCE</small><h3>Ratio AI</h3><p>Defences against prompt injection and data poisoning, plus an AI-accountability framework (NIST AI RMF, EU AI Act).</p><div class="tags"><span>LLM Security</span><span>Compliance</span></div></article>
+      <article class="print rv" data-c="safety"><small>★ FEATURED · DESIGN SCIENCE · 2026</small><h3>VeriData Protocol</h3><p>A five-step security protocol for tamper-proof data: AI checks authenticity, risk decides the encryption, and a blockchain Merkle root locks integrity ready for post-quantum attackers.</p><div class="tags"><span>Deepfake Detection</span><span>Post-Quantum Crypto</span><span>Blockchain</span><span>Selective Encryption</span></div></article>
     </div>
   </div>
 </section>
@@ -311,7 +311,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 $$('.rv').forEach(e=>io.observe(e));
 $$('.f').forEach(b=>b.onclick=()=>{$$('.f').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.print').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f));edges()});
 $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,m=$('#msg');$('#sb').disabled=true;m.textContent='Sending…';
- try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.textContent='Thank you — message received!';f.reset()}else throw 0}catch{m.textContent='Something went wrong — please email me directly.'}$('#sb').disabled=false});
+ try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.textContent='Thank you message received!';f.reset()}else throw 0}catch{m.textContent='Something went wrong please email me directly.'}$('#sb').disabled=false});
 
 /* draw everything now and whenever the page changes size */
 let tm;const draw=()=>{hero();fallPage();edges()};
