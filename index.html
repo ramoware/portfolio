@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ramdev Chaudhary — ML Engineer · 静かな庭</title>
+<meta name="description" content="Ramdev Chaudhary — Machine Learning Engineer. ML systems, RF sensing, security protocols and quantitative models."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--washi:#f6f1e7;--washi2:#ede5d3;--sumi:#23262d;--sumi2:#5b5e66;--shu:#c8452d;--matcha:#7d9170;--ai:#3a5675;--sakura:#f2c9cf;--line:rgba(35,38,45,.14);
+--serif:'Shippori Mincho',Georgia,serif;--sans:'Zen Maru Gothic',system-ui,sans-serif;--mono:ui-monospace,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--washi);color:var(--sumi);line-height:1.8;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--shu);color:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+section{padding:6.5rem 0;position:relative}
+/* nav */
+nav{position:fixed;top:0;width:100%;z-index:40;background:rgba(246,241,231,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.logo{font-family:var(--serif);font-weight:700;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.hanko{width:30px;height:30px;background:var(--shu);color:#fff;border-radius:6px;display:grid;place-items:center;font-size:.95rem;transform:rotate(-6deg)}
+.links{display:flex;gap:1.4rem;font-size:.85rem;overflow-x:auto;scrollbar-width:none}
+.links a{white-space:nowrap;color:var(--sumi2);transition:color .2s}.links a:hover{color:var(--shu)}
+.links small{display:block;font-family:var(--serif);font-size:.65rem;color:var(--shu);line-height:1;text-align:center}
+/* one-take thread */
+#thread{position:fixed;left:14px;top:70px;bottom:20px;width:2px;background:var(--line);z-index:30}
+#thread i{position:absolute;left:0;top:0;width:100%;height:0;background:var(--shu)}
+#koi{position:absolute;left:-9px;top:0;font-size:1.2rem;transform:rotate(90deg);transition:top .1s linear}
+@media(max-width:700px){#thread{display:none}}
+/* hero */
+#home{min-height:100vh;display:flex;align-items:center;padding:7rem 0 5rem;overflow:hidden;background:linear-gradient(#f9efe3,var(--washi) 70%)}
+.scene{position:absolute;inset:0;pointer-events:none}
+.sun{position:absolute;right:12%;top:16%;width:min(24vw,210px);aspect-ratio:1;border-radius:50%;background:var(--shu);opacity:.9;animation:rise 3s ease-out both,breathe 7s ease-in-out 3s infinite}
+@keyframes rise{from{transform:translateY(90px);opacity:0}}@keyframes breathe{50%{transform:scale(1.04)}}
+.hills{position:absolute;bottom:0;left:0;width:100%;height:48%}
+.koi{position:absolute;font-size:2rem;bottom:16%;left:-10%;animation:swim 26s linear infinite;opacity:.85}
+.koi.b{bottom:8%;animation-duration:34s;animation-delay:-14s;font-size:1.5rem}
+@keyframes swim{50%{transform:translateY(-18px) scaleY(.92)}to{left:110%}}
+.petal{position:absolute;top:-30px;width:11px;height:14px;background:var(--sakura);border-radius:80% 0 80% 0;opacity:.9;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(90px,105vh) rotate(540deg)}}
+.hero-in{position:relative;z-index:2}
+.rec{display:inline-flex;gap:.6rem;align-items:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;border:1px solid var(--line);border-radius:99px;padding:.3rem .9rem;background:rgba(255,255,255,.5)}
+.rec i{width:8px;height:8px;border-radius:50%;background:var(--shu);animation:blink 1.4s infinite}@keyframes blink{50%{opacity:.2}}
+h1{font-family:var(--serif);font-size:clamp(2.8rem,9vw,6.4rem);line-height:1.1;margin:1.2rem 0 .6rem;font-weight:700}
+h1 em{font-style:normal;color:var(--shu)}
+.cap{min-height:3.2rem;font-size:clamp(1.15rem,3vw,1.7rem);font-weight:700}
+.cap span{display:inline-block;margin-right:.3em;opacity:.35;transition:.25s}
+.cap span.on{opacity:1;color:#fff;background:var(--ai);border-radius:8px;padding:0 .35em;transform:scale(1.07) rotate(-1.5deg)}
+.hero-p{max-width:38rem;color:var(--sumi2);margin:1rem 0 2rem}
+.btn{display:inline-block;padding:.8rem 1.6rem;border-radius:99px;font-weight:700;font-size:.9rem;border:2px solid var(--sumi);margin:0 .6rem .6rem 0;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn.fill{background:var(--shu);border-color:var(--shu);color:#fff}
+.btn.fill:hover{background:var(--sumi);border-color:var(--sumi)}
+/* headings */
+.sh{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem;flex-wrap:wrap}
+.take{font-family:var(--mono);font-size:.7rem;color:var(--shu);letter-spacing:.1em;border:1px solid var(--shu);padding:.1rem .5rem;border-radius:4px}
+.sh h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);line-height:1.15}
+.sh h2 em{font-style:normal;color:var(--shu)}
+.sh .kj{font-family:var(--serif);font-size:3.5rem;color:var(--sakura);line-height:1;margin-left:auto;-webkit-text-stroke:1px var(--shu)}
+/* wave marquee */
+.wave{background:var(--ai);color:var(--washi);padding:.9rem 0;overflow:hidden;font-family:var(--serif)}
+.wave div{display:flex;gap:3rem;width:max-content;animation:mq 40s linear infinite;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* collage */
+.collage{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:4rem}
+.tile{background:#fff;padding:.7rem .7rem 1.2rem;box-shadow:0 8px 22px rgba(35,38,45,.12);position:relative;transition:transform .35s}
+.tile:nth-child(1){transform:rotate(-3deg)}.tile:nth-child(2){transform:rotate(2deg) translateY(14px)}.tile:nth-child(3){transform:rotate(-1.5deg)}.tile:nth-child(4){transform:rotate(3deg) translateY(10px)}
+.tile:hover{transform:rotate(0) scale(1.05)!important;z-index:2}
+.tile::before{content:'';position:absolute;top:-10px;left:50%;width:64px;height:20px;margin-left:-32px;background:rgba(200,69,45,.28);transform:rotate(-3deg)}
+.art{aspect-ratio:1;border-radius:4px;display:grid;place-items:center;font-size:3.2rem;overflow:hidden;animation:bob 5s ease-in-out infinite}
+.tile:nth-child(2) .art{animation-delay:-1s}.tile:nth-child(3) .art{animation-delay:-2s}.tile:nth-child(4) .art{animation-delay:-3s}
+@keyframes bob{50%{transform:scale(1.06)}}
+.tile p{font-size:.8rem;text-align:center;margin-top:.6rem;line-height:1.4}.tile b{display:block;font-family:var(--serif)}
+@media(max-width:760px){.collage{grid-template-columns:repeat(2,1fr)}}
+/* about */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:3.5rem}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.about p{color:var(--sumi2);margin-bottom:1.1rem}
+.quote{border-left:3px solid var(--shu);padding-left:1.2rem;font-family:var(--serif);font-size:1.15rem;margin:1.8rem 0}
+.quote small{display:block;color:var(--sumi2);font-family:var(--sans);font-size:.8rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.stat{background:var(--washi2);border-radius:14px;text-align:center;padding:1rem .4rem}
+.stat b{display:block;font-family:var(--serif);font-size:2rem;color:var(--shu);line-height:1.1}.stat span{font-size:.72rem;color:var(--sumi2)}
+.card{background:#fff;border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:.9rem;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(35,38,45,.1)}
+.card h4{font-family:var(--serif);color:var(--ai);font-size:.95rem}.card p{margin:0;font-size:.9rem}
+/* skills */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem}
+.skill{background:#fff;border-radius:18px;padding:1.6rem;border:1px solid var(--line);transition:transform .25s}
+.skill:hover{transform:translateY(-5px) rotate(-.6deg)}
+.skill .k{font-family:var(--serif);font-size:2rem;color:var(--shu);line-height:1}
+.skill h3{font-family:var(--serif);font-size:1.2rem;margin:.3rem 0}
+.skill code{display:block;font-family:var(--mono);font-size:.72rem;color:var(--ai);margin-bottom:.6rem}
+.skill p{font-size:.9rem;color:var(--sumi2)}
+.bar{height:8px;background:var(--washi2);border-radius:9px;margin-top:1rem;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--matcha),var(--shu));transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+/* clips */
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.f{font:inherit;font-size:.85rem;padding:.4rem 1.1rem;border-radius:99px;border:1.5px solid var(--sumi);background:none;cursor:pointer;color:var(--sumi)}
+.f.on{background:var(--sumi);color:var(--washi)}
+.clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.4rem}
+.clip{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.clip:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(35,38,45,.12)}
+.clip.hide{display:none}.clip.feat{grid-column:1/-1}
+.reel{background:var(--sumi);color:var(--washi);padding:1.2rem 1.5rem;position:relative;min-height:112px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.reel::before{content:attr(data-k);position:absolute;right:1rem;top:-.4rem;font-family:var(--serif);font-size:5rem;color:var(--shu);opacity:.35;line-height:1}
+.reel small{font-family:var(--mono);font-size:.68rem;color:var(--sakura);letter-spacing:.1em}
+.reel h3{font-family:var(--serif);font-size:1.4rem;line-height:1.25}
+.reel .tc{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--shu);transition:width 4s linear}
+.clip:hover .tc{width:100%}
+.cb{padding:1.3rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+.cb>p{font-size:.9rem;color:var(--sumi2)}
+.fm{font-family:var(--mono);font-size:.74rem;color:var(--ai)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}.tags span{font-size:.72rem;background:var(--washi2);padding:.15rem .7rem;border-radius:99px}
+.meta{font-size:.76rem;color:var(--sumi2);border-top:1px dashed var(--line);padding-top:.7rem;margin-top:auto}
+.visit{color:var(--shu);font-weight:700;font-size:.85rem}
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem}
+.ema{background:#e7c9a0;border-radius:18px 18px 8px 8px;padding:1.6rem 1.1rem 1.2rem;text-align:center;position:relative;box-shadow:0 8px 18px rgba(35,38,45,.12);transition:transform .3s;transform-origin:top center}
+.ema::before{content:'';position:absolute;top:8px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--sumi)}
+.ema:hover{animation:sway 1.4s ease-in-out}
+@keyframes sway{25%{transform:rotate(4deg)}75%{transform:rotate(-4deg)}}
+.ema .k{font-family:var(--serif);font-size:2.4rem;color:var(--shu);line-height:1.1;margin-top:.5rem}
+.ema h3{font-family:var(--serif);font-size:1rem;line-height:1.3;margin:.3rem 0}.ema p{font-size:.78rem;color:#5a4a36;line-height:1.4}
+/* contact */
+#contact{background:var(--sumi);color:var(--washi)}
+#contact .sh h2 em,#contact .take{color:var(--sakura);border-color:var(--sakura)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+@media(max-width:820px){.cgrid{grid-template-columns:1fr}}
+.cgrid>div>p{margin-bottom:1.5rem;opacity:.8}
+.crow{display:block;padding:.9rem 0;border-bottom:1px dashed rgba(246,241,231,.2)}
+.crow small{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sakura)}
+.crow:hover{color:var(--sakura)}
+form{display:flex;flex-direction:column;gap:.8rem}
+input,textarea{font:inherit;padding:.8rem 1rem;border-radius:12px;border:1.5px solid rgba(246,241,231,.25);background:rgba(246,241,231,.06);color:var(--washi)}
+input:focus,textarea:focus{outline:none;border-color:var(--sakura)}
+button.send{font:inherit;font-weight:700;padding:.9rem;border-radius:99px;border:none;background:var(--shu);color:#fff;cursor:pointer;transition:transform .2s}
+button.send:hover{transform:translateY(-3px)}
+#msg{font-size:.9rem;margin-top:.8rem;color:var(--sakura)}
+footer{background:var(--sumi);color:rgba(246,241,231,.6);text-align:center;font-size:.8rem;padding:2rem 1rem 3rem;border-top:1px solid rgba(246,241,231,.1)}
+footer b{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--washi)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="thread" aria-hidden="true"><i id="tfill"></i><span id="koi">🐟</span></div>
+
+<nav><div class="nav-in">
+  <a href="#home" class="logo"><span class="hanko">墨</span>Ramdev Chaudhary</a>
+  <div class="links">
+    <a href="#about"><small>私</small>About</a><a href="#skills"><small>技</small>Skills</a><a href="#projects"><small>作</small>Work</a><a href="#certifications"><small>証</small>Certs</a><a href="#contact"><small>文</small>Contact</a>
+  </div>
+</div></nav>
+
+<section id="home">
+  <div class="scene" aria-hidden="true">
+    <div class="sun"></div>
+    <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none"><path d="M0 300V190C120 120 200 90 330 160S520 230 640 140 860 40 980 130 1130 170 1200 120V300Z" fill="#a9b99c" opacity=".55"/><path d="M0 300V230C150 180 260 210 400 230S650 160 800 210 1050 190 1200 230V300Z" fill="#7d9170" opacity=".7"/><path d="M0 300V265C200 240 400 280 600 262S1000 240 1200 268V300Z" fill="#3a5675" opacity=".85"/></svg>
+    <span class="koi">🐟</span><span class="koi b">🎏</span>
+    <div id="petals"></div>
+  </div>
+  <div class="wrap hero-in">
+    <div class="rec rv"><i></i>REC <span id="tc">00:00:00</span> · Mumbai, IN · open to collaborate</div>
+    <h1 class="rv">Hi, I'm <em>Ramdev.</em></h1>
+    <div class="cap" id="cap" aria-live="off"></div>
+    <p class="hero-p rv">A calm garden where philosophy, physics and mathematics meet. I build ML systems, RF sensing pipelines, security protocols and quantitative models that turn abstract theory into working machinery.</p>
+    <div class="rv">
+      <a href="#projects" class="btn fill">See the work</a>
+      <a href="#contact" class="btn">Say hello</a>
+      <a href="assets/resume.pdf" download class="btn">Résumé ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sh rv"><span class="take">TAKE 01</span><h2>The <em>curious</em> mind</h2><span class="kj">私</span></div>
+    <div class="collage rv">
+      <div class="tile"><div class="art" style="background:#dfe8f0">🌊</div><p><b>Signals</b>Wi-Fi CSI &amp; RF sensing</p></div>
+      <div class="tile"><div class="art" style="background:#f7ddd6">⛩️</div><p><b>Security</b>VeriData &amp; AI safety</p></div>
+      <div class="tile"><div class="art" style="background:#e4ecd9">🎋</div><p><b>Quant</b>Honest backtesting in C++</p></div>
+      <div class="tile"><div class="art" style="background:#f6e9c8">🏮</div><p><b>Learning</b>IIT Madras · AI &amp; Math</p></div>
+    </div>
+    <div class="about">
+      <div class="rv">
+        <p>I am a Machine Learning practitioner drawn to the places where philosophy, physics, and mathematics touch. The same impulse that compels a physicist to reduce a falling body to a differential equation compels me to reduce a messy real-world signal — a breathing chest, a price series, a language model's behaviour — into something clean, testable, and defensible.</p>
+        <p>My work spans four directions I refuse to keep separate: a <b>contactless respiratory digital twin</b> fusing Wi-Fi Channel State Information with a Physics-Informed Neural Network; an <b>event-driven C++ backtesting engine</b> that makes lookahead bias structurally impossible; a design-science security protocol, <b>VeriData</b>, unifying AI authenticity verification, selective encryption and blockchain-anchored integrity; and <b>AI safety &amp; compliance frameworks</b> grounded in NIST AI RMF and the EU AI Act.</p>
+        <p>VeriData is the project I am most fond of — it arrived as a raw intuition that the same pattern (verify, then protect, then anchor) was missing from three domains at once, and was only later validated into a formal five-phase protocol. Intuition first, rigor second, and a refusal to believe disciplines must stay in their lanes.</p>
+        <div class="quote">“The important thing is not to stop questioning. Curiosity has its own reason for existing.”<small>— Albert Einstein</small></div>
+        <div class="stats">
+          <div class="stat"><b class="count" data-t="5" data-s="+">0</b><span>Flagship projects</span></div>
+          <div class="stat"><b class="count" data-t="5">0</b><span>Certifications</span></div>
+          <div class="stat"><b class="count" data-t="100" data-s="%">0</b><span>Curiosity</span></div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="card"><h4>Education</h4><p>Domain Scholar (AI &amp; Math) · IIT Madras<br>BSc IT · Ramanand Arya D A V College</p></div>
+        <div class="card"><h4>Experience</h4><p>AI Engineer · Ratio AI<br>AI Intern · Sapio Analytics</p></div>
+        <div class="card"><h4>Disciplines</h4><p>ML Engineering · RF Sensing · Quantitative Finance · Security Protocol Design · AI Safety</p></div>
+        <div class="card"><h4>Working principle</h4><p style="font-family:var(--serif);font-size:1.1rem">“Know thy self.”</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--washi2)">
+  <div class="wrap">
+    <div class="sh rv"><span class="take">TAKE 02</span><h2>Skills &amp; <em>craft</em></h2><span class="kj">技</span></div>
+    <div class="grid3">
+      <div class="skill rv"><div class="k">Σ</div><h3>Statistical Learning</h3><code>f̂ = argmin 𝔼[L(y, f(x))] + λ‖f‖²</code><p>Statistical learning, model validation &amp; backtesting, feature engineering — grounded in the mathematics of generalisation rather than the folklore of leaderboards.</p><div class="bar"><i data-w="92"></i></div></div>
+      <div class="skill rv"><div class="k">∫</div><h3>Time Series &amp; Forecasting</h3><code>xₜ = φ₁xₜ₋₁ + … + εₜ</code><p>Forecasting, demand modeling, and quantitative analysis pipelines — where stationarity, drift and regime change are the real antagonists.</p><div class="bar"><i data-w="88"></i></div></div>
+      <div class="skill rv"><div class="k">λ</div><h3>Quantitative Finance</h3><code>impact ≈ Y·σ·√(Q / V)</code><p>Event-driven backtesting, market microstructure, and transaction-cost modelling — treating Sharpe ratios with appropriate suspicion.</p><div class="bar"><i data-w="82"></i></div></div>
+      <div class="skill rv"><div class="k">Θ</div><h3>AI Safety &amp; Security</h3><code>Authenticity ∧ Integrity ∧ Confidentiality</code><p>Prompt-injection defenses, deepfake detection, post-quantum readiness, protocol design grounded in NIST AI RMF &amp; the EU AI Act.</p><div class="bar"><i data-w="85"></i></div></div>
+      <div class="skill rv"><div class="k">ℵ</div><h3>Systems &amp; C++</h3><code>RAII · move-semantics · zero-cost abstraction</code><p>Event-driven architecture, RAII, STL, CMake, pybind11 — the substrate on which the mathematics can actually run.</p><div class="bar"><i data-w="85"></i></div></div>
+      <div class="skill rv"><div class="k">Ψ</div><h3>RF Sensing &amp; Digital Twins</h3><code>P(t) = V(t)/C + R·dV(t)/dt</code><p>ESP32, Wi-Fi CSI, physics-informed signal processing — reconstructing human physiology from the perturbations it leaves in the electromagnetic field.</p><div class="bar"><i data-w="80"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sh rv"><span class="take">TAKE 03</span><h2>Selected <em>clips</em></h2><span class="kj">作</span></div>
+    <div class="filters rv">
+      <button class="f on" data-f="all">All</button><button class="f" data-f="ml">ML &amp; Research</button><button class="f" data-f="quant">Quant</button><button class="f" data-f="safety">AI Safety</button>
+    </div>
+    <div class="clips">
+      <article class="clip rv" data-c="ml"><div class="reel" data-k="一"><small>CLIP 01 · HEALTH-TECH · AAVISHKAR 2026</small><h3>Aero-Breathe CSI</h3><i class="tc"></i></div><div class="cb"><div class="fm">P(t) = V(t)/C + R·dV(t)/dt</div><p>A contactless respiratory digital twin. Two ESP32 boards capture Wi-Fi Channel State Information across a patient's chest; a Butterworth bandpass isolates the breathing waveform; a Physics-Informed Neural Network constrained by the single-compartment lung model reconstructs respiratory rate. Served live with a 15-second apnea alert.</p><div class="tags"><span>Wi-Fi CSI</span><span>ESP32</span><span>PINN · PyTorch</span><span>Streamlit</span></div><p class="meta">Aavishkar Research Convention · ₹1,350 hardware cap · VitalCSI benchmark: 1.20 brpm MAE</p></div></article>
+      <article class="clip rv" data-c="quant"><div class="reel" data-k="二"><small>CLIP 02 · QUANT · C++ 2026</small><h3>Honest Backtesting Engine</h3><i class="tc"></i></div><div class="cb"><div class="fm">Sharpe_true = Sharpe_reported − costs</div><p>An event-driven C++ backtester architected to make lookahead bias structurally impossible, then used to quantify how much apparent alpha survives spread, slippage, fees, and square-root market impact. Ships with walk-forward validation, a deflated Sharpe calculation, and capacity curves across three strategies.</p><div class="tags"><span>C++17</span><span>CMake</span><span>Market Microstructure</span><span>pybind11</span></div><p class="meta">Event-driven engine · 5-layer cost model · Square-root impact · Deflated Sharpe</p></div></article>
+      <article class="clip rv" data-c="ml"><div class="reel" data-k="三"><small>CLIP 03 · GOVERNMENT · AI</small><h3>SAKSHAM Skill Census</h3><i class="tc"></i></div><div class="cb"><div class="fm">X → φ(X) → Sovereign Model</div><p>Feature engineering for the Sovereign AI Model powering the Government of Maharashtra's hyperlocal Smart Digital Skill Census. Formulating the analytical models on which the core AI engine runs.</p><div class="tags"><span>Sapio Analytics</span><span>Feature Engineering</span><span>Hyperlocal AI</span><span>Govt. of Maharashtra</span></div><p class="meta">Government project · H-West Ward, Mumbai · Sovereign AI · <a class="visit" href="https://sapioanalytics.com/" target="_blank" rel="noopener">Visit ↗</a></p></div></article>
+      <article class="clip rv" data-c="safety"><div class="reel" data-k="四"><small>CLIP 04 · SECURITY · COMPLIANCE</small><h3>Ratio AI</h3><i class="tc"></i></div><div class="cb"><div class="fm">∀x (Injection(x) → ¬Execute(x))</div><p>Building defenses against prompt injection and data poisoning attacks for LLM systems. Created the security and compliance framework measuring AI accountability, aligned with NIST AI RMF and the EU AI Act.</p><div class="tags"><span>LLM Security</span><span>NIST AI RMF</span><span>EU AI Act</span><span>Compliance</span></div><p class="meta">Prompt injection defense · Data poisoning · AI accountability · <a class="visit" href="https://ratioai.in/" target="_blank" rel="noopener">Visit ↗</a></p></div></article>
+      <article class="clip feat rv" data-c="safety"><div class="reel" data-k="五"><small>CLIP 05 · DESIGN SCIENCE · SYIT 2026 · ★ FEATURED</small><h3>VeriData Protocol</h3><i class="tc"></i></div><div class="cb"><div class="fm">AI_Verify ≺ Selective_Encrypt ≺ Merkle_Anchor ≺ Ledger_Verify</div><p>An application-layer security protocol for authentic and tamper-proof data exchange in regulated environments. Combines lightweight AI authenticity verification (DistilBERT, CNN deepfake detection) with risk-based selective encryption (AES, ChaCha20-Poly1305, PQ-ready KEM) and blockchain-anchored Merkle roots — securing data against synthetic-media injection, insider tampering, and post-quantum adversaries. Formalised as a five-phase protocol: submission, AI verification, risk-classified encryption, integrity anchoring, and secure retrieval.</p><div class="tags"><span>Design Science Research</span><span>Post-Quantum Crypto</span><span>Blockchain · Merkle</span><span>Deepfake Detection</span><span>Selective Encryption</span><span>NIST-ready</span></div><p class="meta">5-phase protocol · AI-first verification before cryptography · Selective risk-based encryption · Future-resilient against quantum adversaries</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" style="background:var(--washi2)">
+  <div class="wrap">
+    <div class="sh rv"><span class="take">TAKE 04</span><h2>Wishes &amp; <em>marks</em></h2><span class="kj">証</span></div>
+    <div class="certs">
+      <div class="ema rv"><div class="k">ρ</div><h3>Research Analyst</h3><p>StockGro<br>Financial Analysis · Markets</p></div>
+      <div class="ema rv"><div class="k">μ</div><h3>Machine Learning Engineer</h3><p>MSDE Skill India<br>Statistical Learning · Evaluation</p></div>
+      <div class="ema rv"><div class="k">δ</div><h3>Ethical Hacking</h3><p>NPTEL · IIT Kharagpur<br>Penetration Testing · VA</p></div>
+      <div class="ema rv"><div class="k">ν</div><h3>Deep Learning for NLP</h3><p>NPTEL · IIT Kharagpur<br>Deep Learning · NLP</p></div>
+      <div class="ema rv"><div class="k">ε</div><h3>Business Fundamentals</h3><p>NPTEL · IIT Bombay<br>Entrepreneurship · Strategy</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sh rv"><span class="take">FINAL TAKE</span><h2>Let's <em>correspond</em></h2><span class="kj" style="-webkit-text-stroke-color:var(--sakura);color:transparent">文</span></div>
+    <div class="cgrid">
+      <div class="rv">
+        <p>Ready to collaborate on a problem worth thinking about? Send a letter — I read everything, and answer most.</p>
+        <a class="crow" href="mailto:ramoware@gmail.com"><small>Email</small>ramoware@gmail.com</a>
+        <a class="crow" href="https://www.linkedin.com/in/ramdevchaudhary" target="_blank" rel="noopener"><small>LinkedIn</small>linkedin.com/in/ramdevchaudhary</a>
+        <a class="crow" href="https://github.com/ramoware" target="_blank" rel="noopener"><small>GitHub</small>github.com/ramoware</a>
+      </div>
+      <div class="rv">
+        <form id="form" action="https://formspree.io/f/xqenrvnb" method="POST">
+          <input name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Your email" required><input name="subject" placeholder="Subject" required>
+          <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+          <button class="send" id="sb">Send letter ✉</button>
+        </form>
+        <div id="msg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><b>Ramdev Chaudhary</b>Machine Learning Engineer — for the joy of understanding, and for the use of it.<br><br>© 2026 · <span id="clock">--:--:--</span> IST · Hosted on GitHub Pages</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+/* petals */
+$('#petals').innerHTML=Array.from({length:16},()=>`<i class="petal" style="left:${Math.random()*100}%;animation-duration:${9+Math.random()*9}s;animation-delay:-${Math.random()*14}s;transform:scale(${.6+Math.random()*.8})"></i>`).join('');
+/* marquee */
+const q=['知るは楽しみ — Know thyself','E = mc²','e^{iπ} + 1 = 0','Cogito, ergo sum','Veritas per cryptographiam','Mathematics is the music of reason','iℏ ∂ψ/∂t = Ĥψ','a² + b² = c²'];
+$('#mq').innerHTML=[...q,...q].map(t=>`<span>${t} &nbsp;❀</span>`).join('');
+/* Opus-style captions: one timeline, word-by-word highlight */
+const lines=['I build ML systems that listen to breathing','I make AI honest, secure and accountable','I teach backtests to tell the truth'];
+let li=0,wi=0;const cap=$('#cap');
+function show(){cap.innerHTML=lines[li].split(' ').map(w=>`<span>${w}</span>`).join('');wi=0}
+show();
+setInterval(()=>{const w=cap.children;if(wi<w.length){w[wi].classList.add('on');if(wi)w[wi-1].classList.remove('on');wi++}else if(wi++>w.length+3){li=(li+1)%lines.length;show()}},320);
+/* REC timecode */
+const t0=Date.now(),p=n=>String(n).padStart(2,'0');
+setInterval(()=>{const s=(Date.now()-t0)/1e3|0;$('#tc').textContent=`${p(s/3600|0)}:${p(s/60%60|0)}:${p(s%60)}`;
+$('#clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'})},1000);
+/* reveal + counters + bars */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+ e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');
+ e.target.querySelectorAll('.count').forEach(c=>{const T=+c.dataset.t,s=c.dataset.s||'';let n=0;const k=setInterval(()=>{n+=Math.ceil(T/30);if(n>=T){n=T;clearInterval(k)}c.textContent=n+s},35)});
+ io.unobserve(e.target)}),{threshold:.15});
+$$('.rv').forEach(e=>io.observe(e));
+/* one-take thread: a single koi follows the scroll */
+const koi=$('#koi'),fill=$('#tfill'),th=$('#thread');
+addEventListener('scroll',()=>{const r=scrollY/(document.body.scrollHeight-innerHeight||1),h=th.clientHeight;fill.style.height=r*h+'px';koi.style.top=r*h-8+'px'},{passive:true});
+/* filter */
+$$('.f').forEach(b=>b.onclick=()=>{$$('.f').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+ $$('.clip').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f))});
+/* form */
+$('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,m=$('#msg');$('#sb').disabled=true;m.textContent='Sending…';
+ try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
+  if(r.ok){m.textContent='Thank you — your letter has arrived 🌸';f.reset()}else throw 0}
+ catch{m.textContent='Something went wrong — please email me directly.'}
+ $('#sb').disabled=false});
+</script>
+</body>
+</html>
